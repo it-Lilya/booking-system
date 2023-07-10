@@ -70,15 +70,12 @@
     content: '';
     top: 80%;
     right: 6%;
-    width: 41%;
+    width: 34%;
     padding: 10px 25px;
     background-color: #FFA800;
-    font-family: Roboto-Bold;
-    font-size: 1rem;
-    white-space: nowrap;
     border: none;
     border-radius: 3px;
-    text-transform: uppercase;
+    text-align: center;
 }
 .search-button:hover {
     box-shadow: 2px 2px 2px rgb(59, 59, 59);
@@ -91,4 +88,12 @@
 .change-btn {
     border: 1px solid rebeccapurple;
     z-index: -1;
+}
+.search-button-text {
+    font-family: Roboto-Bold;
+    font-size: 1.25rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
 }

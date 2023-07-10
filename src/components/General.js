@@ -9,44 +9,46 @@ import './General.css';
 export const General = () => {
   useEffect(() => {
     localStorage.clear();
-    // const btn = document.getElementById('btn-search');
-    // btn.addEventListener('click', (e) => {
-    //   e.preventDefault();
-    //   const inputs = e.target.parentElement.querySelectorAll('.form-input');
-    //   if (inputs[0].classList.contains('first')) {
-    //     localStorage.setItem('first-city', inputs[0].value);
-    //     localStorage.setItem('first-city-id', inputs[0].id);
-    //   }
-    //   if (inputs[1].classList.contains('second')) {
-    //     localStorage.setItem('second-city', inputs[1].value);
-    //     localStorage.setItem('second-city-id', inputs[1].id);
-    //   }
-    //   const inputsDate = document.querySelectorAll('.date-inputs input');
-    //   if (inputsDate[0].classList.contains('first')) {
-    //     localStorage.setItem('first-date', inputsDate[0].value);
-    //   }
-    //   if (inputsDate[1].classList.contains('second')) {
-    //     localStorage.setItem('second-date', inputsDate[1].value);
-    //   }
-    //   if (inputs[0].value === '' || inputs[1].value === '') {
-    //     document.querySelector('.App').classList.add('app-hide');
-    //     document.querySelector('.error-window').classList.add('window-active');
-    //   }
-    //   if (inputsDate[1].value !== '') {
-    //     fetch(`https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[1].id}&to_city_id=${inputs[0].id}`)
-    //       .then((response) => response.json())
-    //       .then((data) => localStorage.setItem('direction-back', JSON.stringify(data.items)));
-    //   }
-    //   if (inputs[0].value !== '' || inputs[1].value !== '') {
-    //     fetch(`https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[0].id}&to_city_id=${inputs[1].id}`)
-    //       .then((response) => response.json())
-    //       .then((data) => localStorage.setItem('direction-there', JSON.stringify(data.items)));
-    //     setTimeout(() => window.location.assign('http://localhost:3000/train-selection/'), 1000);
-    //   }
-    //   fetch('https://students.netoservices.ru/fe-diplom/routes/last/')
-    //     .then((response) => response.json())
-    //     .then((data) => localStorage.setItem('last', JSON.stringify(data)));
-    // });
+    const btn = document.querySelector('.btn-btn-search');
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      btn.classList.add('search-button-active');
+      const inputs = e.target.parentElement.parentElement.querySelectorAll('.form-input');
+      if (inputs[0].classList.contains('first')) {
+        localStorage.setItem('first-city', inputs[0].value);
+        localStorage.setItem('first-city-id', inputs[0].id);
+      }
+      if (inputs[1].classList.contains('second')) {
+        localStorage.setItem('second-city', inputs[1].value);
+        localStorage.setItem('second-city-id', inputs[1].id);
+      }
+      const inputsDate = document.querySelectorAll('.date-inputs input');
+      if (inputsDate[0].classList.contains('first')) {
+        localStorage.setItem('first-date', inputsDate[0].value);
+      }
+      if (inputsDate[1].classList.contains('second')) {
+        localStorage.setItem('second-date', inputsDate[1].value);
+      }
+      if (inputs[0].value === '' || inputs[1].value === '') {
+        document.querySelector('.App').classList.add('app-hide');
+        document.querySelector('.error-window').classList.add('window-active');
+      }
+      if (inputsDate[1].value !== '') {
+        fetch(`https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[1].id}&to_city_id=${inputs[0].id}`)
+          .then((response) => response.json())
+          .then((data) => localStorage.setItem('direction-back', JSON.stringify(data.items)));
+      }
+      if (inputs[0].value !== '' || inputs[1].value !== '') {
+        fetch(`https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[0].id}&to_city_id=${inputs[1].id}`)
+          .then((response) => response.json())
+          .then((data) => localStorage.setItem('direction-there', JSON.stringify(data.items)));
+        // setTimeout(() => window.location.assign('http://localhost:3000/train-selection/'), 1000);
+      }
+      fetch('https://students.netoservices.ru/fe-diplom/routes/last/')
+        .then((response) => response.json())
+        .then((data) => localStorage.setItem('last', JSON.stringify(data)));
+    });
+    // btn.classList.remove('search-button-active');
   }, []);
   function hidenWindow(e) {
     e.preventDefault();

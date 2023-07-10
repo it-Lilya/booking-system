@@ -20,7 +20,8 @@ export const HeaderForm = () => (
         </div>
         </div>
         </form>
-        {/* <button id='btn-search' className='search-button' type='button'>Найти билеты</button> */}
-        <NavLink id='btn-search' to='/train-selection/' />
+        <div className='btn-btn-search search-button'>
+           <NavLink id='btn-search' className='search-button-text' to='/train-selection'>Найти билеты</NavLink>
+        </div>
     </div>
 );
