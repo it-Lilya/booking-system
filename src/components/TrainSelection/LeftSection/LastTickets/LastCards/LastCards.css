@@ -1,0 +1,79 @@
+.last-cards-container {
+    border: 1px solid #c4c4c4;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)
+}
+.last-cards-first-city, .last-cards-second-city {
+    width: 35%;
+}
+.last-cards-city-container {
+    display: flex;
+    justify-content: space-between;
+}
+.last-card-city {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.last-second-name {
+    text-align: right;
+}
+.railway-station {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: #928f94;
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+.second-railway-station {
+    text-align: right;
+}
+.panel-with-options {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.panel-options-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+.icons-options {
+    background-size: cover;
+    width: 27px;
+    height: 27px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.icons-options-wifi {
+    background-image: url('/src/images/wi-fi.png');
+    margin-top: 2px;
+}
+.icons-options-express {
+    background-image: url('/src/images/express.png');
+}
+.icons-options-cup {
+    background-image: url('/src/images/cup.png');
+}
+.information-price-panel {
+    font-family: Roboto;
+}
+.panel-price-from {
+    color:#928F94;
+}
+.panel-price {
+    font-family: Roboto-Bold;
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: #ffa800
+}
+.panel-vector {
+    color: #928F94;
+    font-size: 2.25rem;
+}
