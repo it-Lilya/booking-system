@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/%3Cyour-github-repo-name%3E/static/css/main.e1d54677.css",
-    "main.js": "/%3Cyour-github-repo-name%3E/static/js/main.d0ec6a2d.js",
-    "static/js/787.9d451dd9.chunk.js": "/%3Cyour-github-repo-name%3E/static/js/787.9d451dd9.chunk.js",
-    "static/media/work.png": "/%3Cyour-github-repo-name%3E/static/media/work.2f68311b0436e88b859b.png",
-    "static/media/image.png": "/%3Cyour-github-repo-name%3E/static/media/image.23031b7e138a52623dff.png",
-    "static/media/Backgroun-selection.png": "/%3Cyour-github-repo-name%3E/static/media/Backgroun-selection.9879decf332e941df8dc.png",
-    "static/media/Roboto-Thin.ttf": "/%3Cyour-github-repo-name%3E/static/media/Roboto-Thin.1711b41f3ae4cb322eea.ttf",
-    "static/media/Roboto-Regular.ttf": "/%3Cyour-github-repo-name%3E/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
-    "static/media/Roboto-Bold.ttf": "/%3Cyour-github-repo-name%3E/static/media/Roboto-Bold.75371f53f06181df75f1.ttf",
-    "static/media/Roboto-Light.ttf": "/%3Cyour-github-repo-name%3E/static/media/Roboto-Light.8be2d1487420548b3b8d.ttf",
-    "static/media/user-second.png": "/%3Cyour-github-repo-name%3E/static/media/user-second.b4e3ed2619c27f0f4fd2.png",
-    "static/media/user-first.png": "/%3Cyour-github-repo-name%3E/static/media/user-first.09e65125397ea7aef925.png",
-    "static/media/loading.gif": "/%3Cyour-github-repo-name%3E/static/media/loading.4e2e699c349a7e5f3147.gif",
-    "static/media/scheme.png": "/%3Cyour-github-repo-name%3E/static/media/scheme.4c1bf9dbe698884bb860.png",
-    "index.html": "/%3Cyour-github-repo-name%3E/index.html",
-    "main.e1d54677.css.map": "/%3Cyour-github-repo-name%3E/static/css/main.e1d54677.css.map",
-    "main.d0ec6a2d.js.map": "/%3Cyour-github-repo-name%3E/static/js/main.d0ec6a2d.js.map",
-    "787.9d451dd9.chunk.js.map": "/%3Cyour-github-repo-name%3E/static/js/787.9d451dd9.chunk.js.map"
+    "main.css": "/booking-system/static/css/main.1f901732.css",
+    "main.js": "/booking-system/static/js/main.6e213361.js",
+    "static/js/787.9d451dd9.chunk.js": "/booking-system/static/js/787.9d451dd9.chunk.js",
+    "static/media/work.png": "/booking-system/static/media/work.2f68311b0436e88b859b.png",
+    "static/media/image.png": "/booking-system/static/media/image.23031b7e138a52623dff.png",
+    "static/media/Backgroun-selection.png": "/booking-system/static/media/Backgroun-selection.9879decf332e941df8dc.png",
+    "static/media/Roboto-Thin.ttf": "/booking-system/static/media/Roboto-Thin.1711b41f3ae4cb322eea.ttf",
+    "static/media/Roboto-Regular.ttf": "/booking-system/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
+    "static/media/Roboto-Bold.ttf": "/booking-system/static/media/Roboto-Bold.75371f53f06181df75f1.ttf",
+    "static/media/Roboto-Light.ttf": "/booking-system/static/media/Roboto-Light.8be2d1487420548b3b8d.ttf",
+    "static/media/user-second.png": "/booking-system/static/media/user-second.b4e3ed2619c27f0f4fd2.png",
+    "static/media/user-first.png": "/booking-system/static/media/user-first.09e65125397ea7aef925.png",
+    "static/media/loading.gif": "/booking-system/static/media/loading.4e2e699c349a7e5f3147.gif",
+    "static/media/scheme.png": "/booking-system/static/media/scheme.4c1bf9dbe698884bb860.png",
+    "index.html": "/booking-system/index.html",
+    "main.1f901732.css.map": "/booking-system/static/css/main.1f901732.css.map",
+    "main.6e213361.js.map": "/booking-system/static/js/main.6e213361.js.map",
+    "787.9d451dd9.chunk.js.map": "/booking-system/static/js/787.9d451dd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1d54677.css",
-    "static/js/main.d0ec6a2d.js"
+    "static/css/main.1f901732.css",
+    "static/js/main.6e213361.js"
   ]
 }
