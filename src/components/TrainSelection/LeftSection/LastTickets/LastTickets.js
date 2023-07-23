@@ -5,7 +5,9 @@ import { LastCards } from './LastCards/LastCards';
 export function LastTickets() {
   const [result, setResult] = useState([]);
   useEffect(() => {
-    setResult(JSON.parse(localStorage.getItem('last')).slice(0, 3));
+    fetch('https://students.netoservices.ru/fe-diplom/routes/last/')
+      .then((response) => response.json())
+      .then((data) => setResult(data.slice(0, 3)));
   }, []);
   return (
     <div className='last-container'>

@@ -1,6 +1,6 @@
 .translators {
     width: 75%;
-    margin: 50px auto 50px;
+    margin: 50px auto 100px;
     height: 300px;
 }
 .translator-title {
@@ -60,7 +60,7 @@
 }
 .carousel-dots {
     width: 150px;
-    margin: 25px auto;
+    margin: 25px auto 79px;
 }
 .dots-container {
     display: flex;

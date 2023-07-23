@@ -4,7 +4,7 @@ import format from 'date-fns/format';
 import { NewElementCard } from './NewElementCard/NewElementCard';
 import { NewCardDirection } from './NewCardDirection/NewCardDirection';
 
-export function CardsSorting({ element, b }) {
+export function CardsSorting({ element }) {
   const [sedentary, setSendentary] = useState('');
   const [sedentaryPlaces, setSendentaryPlaces] = useState();
   const [sedentaryPrice, setSedentaryPrice] = useState();
@@ -22,9 +22,10 @@ export function CardsSorting({ element, b }) {
   const [luxPlaces, setLuxPlaces] = useState();
   const [luxPrice, setLuxPrice] = useState();
   const [back, setBack] = useState('');
+  const dataBack = JSON.parse(localStorage.getItem('back'));
   function converterDate(e) {
     const date = new Date(e * 1000);
-    const formatDate = format(date, 'dd/MM/yyyy HH:mm');
+    const formatDate = format(date, 'HH:mm');
     return formatDate;
   }
   function durationTime(e) {
@@ -38,39 +39,22 @@ export function CardsSorting({ element, b }) {
     return formated;
   }
   useEffect(() => {
-    if (b !== undefined) {
-      setBack(<NewCardDirection back={b} />);
+    if (dataBack !== null) {
+      dataBack.forEach((e) => {
+        if (e.departure.from.datetime >= element.departure.to.datetime) {
+          setBack(<NewCardDirection back={e} />);
+        }
+      });
     }
-  //   if (localStorage.getItem('second-date') !== null) {
-  //     const find = dataBack.find((e) => e.departure.from.railway_station_name === element.departure.to.railway_station_name);
-  //     console.log(find);
-  //     // dataBack.forEach((e) => {
-  //     //   if (e.departure.from.railway_station_name === element.departure.to.railway) {
-  //     //   }
-  //     //   // const convertDateBack = new Date(e.departure.from.datetime * 1000);
-  //     //   // const formatDateBack = format(convertDateBack, 'dd.MM.yyyy');
-  //     //   // const convertDate = new Date(element.departure.to.datetime * 1000);
-  //     //   // const formatDate = format(convertDate, 'dd.MM.yyyy');
-  //     //   // if (formatDateBack >= formatDate) {
-  //     //   //   // setBack(e);
-  //     //   //   console.log(e);
-  //     //   // }
-  //     //   // console.log(back);
-  //     //   // if (formatDate === localStorage.getItem('second-date')) {
-  //     //   //   // arrayThere.push(back);
-  //     //   //   // console.log('a');
-  //     //   //   // setBack(e);
-  //     //   //   console.log(e);
-  //     //   // }
-  //     //   // if (e.departure.from.railway_station_name === element.departure.to.railway_station_name) {
-  //     //   //   // setBack(e);
-  //     //   //   console.log('asa');
-  //     //   //   const container = document.querySelectorAll('.new-card-container');
-  //     //   //   container[0].append(<p>asd</p>);
-  //     //   // }
-  //     // });
-  //   }
-  });
+    if (element.departure.have_wifi === false) {
+      const parent = document.getElementById(`${element.departure._id}`);
+      parent.querySelector('.wagons-icon-second').style.display = ' none';
+    }
+    if (element.departure.is_express === false) {
+      const parent = document.getElementById(`${element.departure._id}`);
+      parent.querySelector('.wagons-icon-second').style.display = ' none';
+    }
+  }, [dataBack]);
   useEffect(() => {
     if (element.departure.have_fourth_class === true) {
       setSendentary('Сидячий');
@@ -112,7 +96,7 @@ export function CardsSorting({ element, b }) {
       const parent = document.getElementById(`${element.departure._id}`);
       parent.querySelector('.lux-type').style.display = 'none';
     }
-  }, [b]);
+  }, []);
   return (
     <div className='cards-sorting-container' id={element.departure._id}>
       <div className='directions_city-information'>
@@ -151,22 +135,6 @@ export function CardsSorting({ element, b }) {
         </div>
       </div>
       {back}
-       {/* <div className='new-card-info-second'>
-        <div className='new-card-first'>
-          <p className='new-card-date'>{converterDate(back.departure.to.datetime)}</p>
-          <p className='new-card-city'>{back.departure.to.city.name}</p>
-          <p className='new-card-station'>{back.departure.to.railway_station_name}</p>
-        </div>
-        <div className='new-card-second'>
-          <p className='available-time'>{durationTime(back.departure.duration)}</p>
-          <i className='new-card-arrow-left'></i>
-        </div>
-        <div className='new-card-third'>
-          <p className='new-card-date'>{converterDate(back.departure.from.datetime)}</p>
-          <p className='new-card-city'>{back.departure.from.city.name}</p>
-          <p className='new-card-station'>{back.departure.from.railway_station_name}</p>
-        </div>
-      </div> */}
     </div>
       </div>
       <div className='second-card-ticket'>
@@ -190,7 +158,7 @@ export function CardsSorting({ element, b }) {
           <i className='wagons-icon-second'></i>
           <i className='wagons-icon-third'></i>
         </div>
-        <button className='select-seats-btn' id='select-btn'>Выбрать места</button>
+        <button className='select-seats-btn' id={element.departure._id}>Выбрать места</button>
       </div>
       </div>
     </div>

@@ -140,7 +140,7 @@
     margin-left: -10%;
 }
 .new-card-third {
-    width: 45%;
+    width: 40%;
     margin-right: -5%;
 }
 .new-card-date {
@@ -206,11 +206,10 @@
     margin-top: 10px;
 }
 .wagons-icon {
-    width: 40%;
     height: 30px;
     margin-left: 60%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 .wagons-icon i {
     position: relative;
@@ -218,6 +217,7 @@
     height: 30px;
     background-size: contain;
     background-repeat: no-repeat;
+    margin-left: 10px;
 }
 .wagons-icon-first {
     background-image: url('/src/images/have-wifi.png');
@@ -305,7 +305,6 @@
     width: 58%;
     margin-left: 22%;
     padding-bottom: 25px;
-    border: 1px solid red;
 }
 
 .new-card-arrow-left {

@@ -1,6 +1,6 @@
 .bottom-form-container {
     width: 48%;
-    height: 426px;
+    height: 482px;
     position: relative;
 }
 .bottom-form-container::before {
@@ -21,7 +21,7 @@
     font-size: 1.875rem;
     color: white;
     padding-left: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     height: 40px;
 }
 .input-container {
@@ -47,7 +47,7 @@
     position: absolute;
     width: 30px;
     height: 35px;
-    right: 0;
+    right: 3px;
     top: 5px;
     background-image: url('/src/images/Vector.png');
     background-repeat: no-repeat;
@@ -73,8 +73,14 @@
     width: 34%;
     padding: 10px 25px;
     background-color: #FFA800;
+    font-family: Roboto-Bold;
+    font-size: 1.25rem;
+    white-space: nowrap;
     border: none;
     border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
     text-align: center;
 }
 .search-button:hover {
@@ -89,11 +95,9 @@
     border: 1px solid rebeccapurple;
     z-index: -1;
 }
-.search-button-text {
-    font-family: Roboto-Bold;
-    font-size: 1.25rem;
-    white-space: nowrap;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #000000;
+/* .fir {
+    margin-top: 40px;
 }
+.sec {
+    margin-top: 40px;
+} */

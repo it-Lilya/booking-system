@@ -2,121 +2,67 @@ import React, { useState, useEffect } from 'react';
 import './RightSections.css';
 import format from 'date-fns/format';
 import { CardsSorting } from './CardsSorting/CardsSorting';
+// import { resultMinTime } from '../LeftSection/TripSetup/Direction/SliderTime/SliderTime';
 
 export function RightSection() {
   const sortList = ['времени', 'стоимости', 'длительности'];
   const [sortType, setType] = useState(sortList[0]);
-  const dataThere = JSON.parse(localStorage.getItem('direction-there'));
-  const dataBack = JSON.parse(localStorage.getItem('direction-back'));
-  const [arr, setArr] = useState(dataThere);
+  const [arr, setArr] = useState([]);
   const [resultNumber, setResultNumber] = useState();
-  const arrayThere = [];
-  const arrayBack = [];
-  const inputsDate = document.querySelectorAll('.date-inputs input');
-  // function destructuringDate(e) {
-  //   return `${e.slice(6)}${e.slice(2, 6)}${e.slice(0, 2)}`;
-  // }
-  const [back, setBack] = useState(undefined);
-  // function converterDate(e) {
-  //   const date = new Date(e * 1000);
-  //   const formatDate = format(date, 'dd/MM/yyyy');
-  //   return formatDate;
-  // }
-  // useEffect(() => {
-  //   if (inputsDate[0].value === '') {
-  //     setArr(dataThere);
-  //   }
-  //   if (inputsDate[1].value === '') {
-  //     setBack(undefined);
-  //   }
-  // });
+  const [arrayThere, setArrayThere] = useState([]);
+  const dataThere = JSON.parse(localStorage.getItem('direction-there'));
+  const [activeData, setActiveData] = useState([]);
+
   useEffect(() => {
-    // setThere(JSON.parse(localStorage.getItem('direction-there')));
-    const btn = document.getElementById('btn-search');
-    btn.addEventListener('click', (e) => {
-      console.log(dataThere[0].departure.from.city.name);
-      e.preventDefault();
-      const inputs = document.querySelectorAll('.form-input');
-      if (inputs[0].classList.contains('first')) {
-        localStorage.setItem('first-city', inputs[0].value);
-        localStorage.setItem('first-city-id', inputs[0].id);
-      }
-      if (inputs[1].classList.contains('second')) {
-        localStorage.setItem('second-city', inputs[1].value);
-        localStorage.setItem('second-city-id', inputs[1].id);
-      }
-      // const inputsDate = document.querySelectorAll('.date-inputs input');
-      if (inputsDate[0].classList.contains('first')) {
-        localStorage.setItem('first-date', inputsDate[0].value);
-      }
-      if (inputsDate[1].classList.contains('second')) {
-        localStorage.setItem('second-date', inputsDate[1].value);
-      }
-      if (inputs[0].value !== '' || inputs[1].value !== '') {
-        fetch(`https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[0].id}&to_city_id=${inputs[1].id}`)
-          .then((response) => response.json())
-          .then((data) => localStorage.setItem('direction-there', JSON.stringify(data.items)));
-      }
-      if (localStorage.getItem('first-date') !== null) {
-        arrayThere.length = 0;
-        dataThere.forEach((el) => {
-          const convertDate = new Date(el.departure.from.datetime * 1000);
-          const formatDate = format(convertDate, 'dd.MM.yyyy');
-          if (formatDate === localStorage.getItem('first-date')) {
-            arrayThere.push(el);
-          }
-        });
-        setArr(arrayThere);
-      }
-      if (inputsDate[0].value === '') {
-        setArr(dataThere);
-      }
-      if (localStorage.getItem('second-date') !== null) {
-        arrayBack.length = 0;
-        dataBack.forEach((elem) => {
-          const convertDateBack = new Date(elem.departure.from.datetime * 1000);
-          const formatDateBack = format(convertDateBack, 'dd.MM.yyyy');
-          if (formatDateBack === localStorage.getItem('second-date')) {
-            arrayBack.push(elem);
-          }
-          // console.log(arrayBack);
-          // if (formatDateBack >= formatDate) {
-          //   setBack(elem);
-          // }
-        //   const formatDate = format(new Date(elem.departure.from.datetime * 1000), 'dd.MM.yyyy');
-        //   console.log(formatDate);
-        //   // if (elem.departure.from.railway_station_name === )
-        //   // const stationsTo = document.querySelectorAll('.new-card-station-to');
-        //   // stationsTo.forEach((station) => {
-        //   //   if (station.textContent === elem.departure.from.railway_station_name) {
-        //   //     setBack(elem);
-        //   //   }
-        //   // });
-        //   setBack(undefined);
-        });
-        setBack(undefined);
-      }
-      // if (localStorage.getItem('second-date') !== null) {
-      //   dataBack.forEach((elem) => {
-      //     const convertDate = new Date(elem.departure.from.datetime * 1000);
-      //     const formatDate = format(convertDate, 'dd.MM.yyyy');
-      //     console.log(formatDate);
-      //   //   const formatDate = format(new Date(elem.departure.from.datetime * 1000), 'dd.MM.yyyy');
-      //   //   console.log(formatDate);
-      //   //   // if (elem.departure.from.railway_station_name === )
-      //   //   // const stationsTo = document.querySelectorAll('.new-card-station-to');
-      //   //   // stationsTo.forEach((station) => {
-      //   //   //   if (station.textContent === elem.departure.from.railway_station_name) {
-      //   //   //     setBack(elem);
-      //   //   //   }
-      //   //   // });
-      //   //   setBack(undefined);
-      //   });
-      //   setBack(undefined);
-      // }
-    });
+    const inputMinPrice = document.querySelector('.range-price-min');
+    setArrayThere(dataThere.filter((d) => Number(d.min_price) >= Number(inputMinPrice.value)));
+    setActiveData(dataThere.filter((d) => Number(d.min_price) >= Number(inputMinPrice.value)));
   }, []);
-  useEffect(() => setResultNumber(arr.length));
+  useEffect(() => {
+    if (localStorage.getItem('first-date')) {
+      arrayThere.forEach((el) => {
+        const convertDate = new Date(el.departure.from.datetime * 1000);
+        const formatDate = format(convertDate, 'dd.MM.yyyy');
+        if (localStorage.getItem('first-date') === formatDate) {
+          arrayThere.push(el);
+          setArr(arrayThere);
+        }
+      })
+    } else {
+      setArr(arrayThere);
+      setActiveData(arrayThere);
+    }
+  }, [arrayThere])
+  useEffect(() => {
+    const dateFilter = document.querySelectorAll('.travel-date');
+    dateFilter.forEach((date) => {
+      date.addEventListener('input', (e) => {
+        if (e.target.classList.contains('travel-date-first')) {
+          const activeSortArray = [];
+          setArr(arrayThere);
+          arr.forEach((elem) => {
+            const convertDate = new Date(elem.departure.from.datetime * 1000);
+            const formatDate = format(convertDate, 'dd.MM.yyyy');
+            if (formatDate === e.target.value) {
+              activeSortArray.push(elem);
+              setArr(activeSortArray);
+              setActiveData(activeSortArray);
+            } 
+            if (formatDate !== e.target.value) {
+              setArr(activeSortArray);
+            }
+          })
+        }
+        if (e.target.value === '') {
+          setArr(arrayThere);
+          setActiveData(arrayThere);
+        }
+      })
+    })
+  }, [arr]);
+  useEffect(() => {
+    setResultNumber(arr.length);
+  }, [arr]);
   function sortingPrices(array) {
     return [...array].sort((a, b) => a.min_price - b.min_price);
   }
@@ -148,6 +94,122 @@ export function RightSection() {
     buttons.forEach((btn) => btn.classList.remove('sort-number-active'));
     e.target.classList.add('sort-number-active');
   }
+  function filtres(parent) {
+      if (parent.classList.contains('coupe')) {
+        console.log(activeData);
+        setArr(arr.filter((object) => object.departure.have_second_class === true));
+      }
+      if (parent.classList.contains('reserved')) {
+        setArr(arr.filter((object) => object.departure.have_third_class === true));
+      }
+      if (parent.classList.contains('seated')) {
+        setArr(arr.filter((object) => object.departure.have_fourth_class === true));
+      }
+      if (parent.classList.contains('lux')) {
+        setArr(arr.filter((object) => object.departure.have_first_class === true));
+      }
+      if (parent.classList.contains('wifi')) {
+        setArr(arr.filter((object) => object.departure.have_wifi === true));
+      }
+      if (parent.classList.contains('express')) {
+        setArr(arr.filter((object) => object.departure.is_express === true));
+      }
+  }
+
+
+  useEffect(() => {
+    const optionsFilter = document.querySelectorAll('.option-element');
+    optionsFilter.forEach((option) => {
+      option.addEventListener('click', () => {
+           setTimeout(() => {
+            if (arr.length !== 0 && option.querySelector('input').value === 'true') {
+              setArr(activeData);
+              filtres(option);
+            }
+            if (option.querySelector('input').value === 'false') {
+              setArr(activeData);
+            }
+          }, 0);
+      })
+    })
+  }, [arr]);
+
+  useEffect(() => {
+    const inputsContainer = document.querySelector('.range-inputs-price');
+    inputsContainer.addEventListener('mouseup', () => {
+      if (activeData !== undefined) {
+        const inputMinPrice = document.querySelector('.range-price-min');
+        setArr(activeData.filter((d) => Number(d.min_price) >= Number(inputMinPrice.value)));
+      }
+    })
+  }, [activeData]);
+
+  function sortingTimes(fromMin, fromMax, line, time) {
+    const minLine = fromMin.parentElement.parentElement.querySelector('.line-input-first').firstChild;
+    const maxLine = fromMax.parentElement.parentElement.querySelector('.line-input-first').lastChild;
+    const resultLineMin = minLine.textContent.split(':');
+    const resultLineMax = maxLine.textContent.split(':');
+    const array = [];
+    if (activeData.length !== 0) {
+      array.length = 0;
+      activeData.forEach((elem) => {
+        const timesElementFrom = new Date(elem.departure.from.datetime * 1000);
+        const hourElement = timesElementFrom.getHours();
+        console.log(resultLineMin[0], resultLineMax[0],  hourElement);
+        if (hourElement > Number(resultLineMin[0]) && hourElement < Number(resultLineMax[0])) {
+          array.push(elem);
+          setTimeout(() => {
+            setArr(array)
+          }, 0)
+        } else if (hourElement === Number(resultLineMin[0]) && hourElement < Number(resultLineMax[0])) {
+          const minutesElementMin = new Date(elem.departure.from.datetime * 1000).getMinutes();
+          if (minutesElementMin >= Number(resultLineMin[1])) {
+            array.push(elem);
+            setTimeout(() => {
+              setArr(array)
+            }, 0)
+          }
+        } else if (hourElement > Number(resultLineMin[0]) && hourElement === Number(resultLineMax[0])) {
+          const minutesElementMin = new Date(elem.departure.from.datetime * 1000).getMinutes();
+          if (minutesElementMin <= Number(resultLineMax[1])) {
+            array.push(elem);
+            setTimeout(() => {
+              setArr(array)
+            }, 0)
+          }
+          if (minutesElementMin > Number(resultLineMax[1])) {
+            array.length = 0;
+            setTimeout(() => {
+              setArr(array)
+            }, 0)
+          }
+        } else {
+          setTimeout(() => {
+            setArr([])
+          }, 0)
+        }
+      })
+    }
+  }
+  useEffect(() => {
+    const btns = document.querySelectorAll('.btns-directions');
+    btns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        if (e.target.parentElement.parentElement.children[1].id === '1') {
+          setTimeout(() => {
+            const fromMin = document.querySelector('.range-min-from');
+            const fromMax = document.querySelector('.range-max-from');
+            fromMin.addEventListener('mouseup', () => {
+              sortingTimes(fromMin, fromMax);
+            });
+            fromMax.addEventListener('mouseup', () => {
+              sortingTimes(fromMin, fromMax);
+            });
+          },0);
+        }
+      })
+    })
+  }, [arr])
   return (
     <section className='right-section'>
         <div className='sort-result-container'>
@@ -168,7 +230,7 @@ export function RightSection() {
         </div>
         <div className='ticket-list'>
           {arr.map((there) => (
-            <CardsSorting element={there} key={Math.random()} b={back}/>
+            <CardsSorting element={there} key={Math.random()} />
           ))}
           <div className='panel-ticket-page'>
             <button className='panel-btn'><i className='panel-left'></i></button>
@@ -181,3 +243,37 @@ export function RightSection() {
     </section>
   );
 }
+
+// import React from "react";
+// import './RightSections.css';
+
+// export function RightSection() {
+//   const sortList = ['времени', 'стоимости', 'длительности'];
+//   console.log(sortList)
+//   return (
+// <section className="right-section">
+//   <div className="sort-result-container">
+//     <p>найдено <span>
+//       {/* {resultNumber} */}
+//       </span></p>
+//     <div className="sort-selection">
+//       сортировать по:
+//       <p className="result-sort" 
+//       // onClick={sort}
+//       >
+//         {/* {sortType} */}
+//       </p>
+//       <div className="btn-sort-container">
+//         {sortList.map((elem, i) => (
+//           <li className="btn-sort" key={i} 
+//           // onClick={sortSelection}
+//           >
+//             {elem}
+//           </li>
+//         ))}
+//       </div>
+//     </div>
+//   </div>
+// </section>
+//   )
+// }

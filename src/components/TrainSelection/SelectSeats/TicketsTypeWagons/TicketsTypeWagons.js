@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './TicketsTypeWagons.css';
-import { TypeWagonsContainer } from '../TypeWagonsContainer/TypeWagonsContainer';
+// import { TypeWagonsContainer } from './TypeWagonsContainer/TypeWagonsContainer';
 
-export function TicketsTypeWagons() {
+export function TicketsTypeWagons({ element }) {
   function focus(e) {
     e.target.parentElement.classList.toggle('focus-icons');
     if (e.target.classList.contains('conditioner')) {
@@ -18,6 +18,11 @@ export function TicketsTypeWagons() {
       e.target.classList.toggle('food-focus');
     }
   }
+//   // useEffect(() => {
+//   //   fetch(`https://students.netoservices.ru/fe-diplom/routes/${element.departure._id}/seats`)
+//   //     .then((response) => response.json())
+//   //     .then((data) => console.log(data));
+//   // }, []);
   function tool(e) {
     document.querySelectorAll('.wagon-information-icons-container p').forEach((element) => {
       element.classList.remove('tooltip');
@@ -36,9 +41,9 @@ export function TicketsTypeWagons() {
   }
   return (
     <div className='tickets-type-wagons'>
-      <TypeWagonsContainer />
+      {/* <TypeWagonsContainer element={element}/> */}
       <div className='tickets-wagon-information'>
-        <p>Вагоны0709</p>
+        <p>Вагоны 07 09</p>
         <p>Нумерация вагонов начинается с головы поезда</p>
       </div>
       <div className='tickets-wagon-column'>

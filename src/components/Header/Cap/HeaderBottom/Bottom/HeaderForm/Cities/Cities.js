@@ -3,17 +3,19 @@ import './Cities.css';
 
 export const Cities = () => {
   const [citiesList, setCities] = useState([]);
-  async function openCities(ev) {
-    if (ev.target.previousSibling.value === '' && citiesList.length !== undefined) {
-      return;
-    }
-    const citiList = ev.target.nextSibling;
-    citiList.classList.toggle('open-citi-list');
-  }
+  // async function openCities(ev) {
+  //   if (ev.target.previousSibling.value === '' && citiesList.length !== undefined) {
+  //     return;
+  //   }
+  //   const citiList = ev.target.nextSibling;
+  //   citiList.classList.toggle('open-citi-list');
+  // }
 
   function citiesQuery(e) {
     const regexp = /^[А-Яа-я-]*$/;
-    if (!e.target.value.match(regexp)) return;
+    if (!e.target.value.match(regexp)) {
+      e.target.value = '';
+    };
     if (e.target.value !== '') {
       fetch(`https://students.netoservices.ru/fe-diplom//routes/cities?name=${e.target.value}`)
         .then((response) => response.json(response))
@@ -61,7 +63,7 @@ export const Cities = () => {
           onChange={citiesQuery}
           autoComplete="off"
           required></input>
-        <i className='vector-city' onClick={openCities}></i>
+        <i className='vector-city'></i>
          <ul className='city-list citi-hidden'>
           {citiesList.map((el) => (
             <li id={el._id} key={el._id} className='city-element' onClick={selectionCity}>
@@ -80,7 +82,7 @@ export const Cities = () => {
           onChange={citiesQuery}
           autoComplete="off"
           required></input>
-        <i className='vector-city' onClick={openCities}></i>
+        <i className='vector-city'></i>
         <ul className='city-list citi-hidden'>
           {citiesList.map((el) => (
             <li id={el._id} key={el._id} className='city-element' onClick={selectionCity}>

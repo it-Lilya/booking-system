@@ -13,7 +13,8 @@ import animation from '../../images/loading.gif';
 function workWithForm() {
   const trainFormContainer = document.querySelector('.bottom-form-container');
   trainFormContainer.classList.add('train-form-container');
-  trainFormContainer.querySelector('.search-button').style.width = '21%';
+  trainFormContainer.style.width = '75%';
+  trainFormContainer.style.height = '310px';
   trainFormContainer.querySelector('.search-button').style.right = '2%';
   trainFormContainer.querySelector('.search-button').style.top = '62%';
   const trainForm = trainFormContainer.firstChild;
@@ -27,6 +28,9 @@ function workWithForm() {
   cityInput[0].id = localStorage.getItem('first-city-id');
   cityInput[1].value = localStorage.getItem('second-city');
   cityInput[1].id = localStorage.getItem('second-city-id');
+  const dateInputs = document.querySelector('.date-inputs');
+  dateInputs.style.width = '140%';
+  dateInputs.style.marginRight = '-80px'
   const inpDate = document.querySelectorAll('.form-input-date');
   if (localStorage.getItem('first-date') !== '') {
     inpDate[0].value = localStorage.getItem('first-date');
@@ -36,8 +40,6 @@ function workWithForm() {
   }
 }
 export function TrainSelection() {
-  const resSortedFirst = <RightSection />;
-  const resSelectSeats = <SelectSeats />;
   // const resPassengers = <Passengers />;
   const [line, setLine] = useState(2);
   const animLoading = <main className='animation'>
@@ -46,9 +48,8 @@ export function TrainSelection() {
     <img className='loading' src={animation} alt='loading...'></img>
   </main>;
   const [main, setMain] = useState(animLoading);
-  const [right, setRight] = useState(resSortedFirst);
-  const firstMain = <main className='main-contain'><LeftSection />{right}</main>;
-  const orders = useState(<ProgressOrder />);
+  const firstMain = useState(<main className='main-contain'><LeftSection /><RightSection /></main>);
+  const orders = <ProgressOrder />;
   function lineProgress() {
     setTimeout(() => {
       if (line <= 99) {
@@ -59,70 +60,69 @@ export function TrainSelection() {
         clearTimeout();
         setLine(100);
         setMain(firstMain);
+        document.querySelector('.progress-order').classList.remove('progress-hidden')
       }
     }, 20);
   }
-  // function destructuringDate(e) {
-  //   return `${e.slice(6)}${e.slice(2, 6)}${e.slice(0, 2)}`;
-  // }
   useEffect(() => {
     workWithForm();
-    // const btn = document.getElementById('btn-search');
-    // btn.addEventListener('click', (e) => {
-    //   e.preventDefault();
-    //   const inputs = document.querySelectorAll('.form-input');
-    //   if (inputs[0].classList.contains('first')) {
-    //     localStorage.setItem('first-city', inputs[0].value);
-    //     localStorage.setItem('first-city-id', inputs[0].id);
-    //   }
-    //   if (inputs[1].classList.contains('second')) {
-    //     localStorage.setItem('second-city', inputs[1].value);
-    //     localStorage.setItem('second-city-id', inputs[1].id);
-    //   }
-    //   const dateInputs = document.querySelectorAll('.form-input-date');
-    //   if (dateInputs[0].value !== '') {
-    //     localStorage.setItem('first-date-seconds', dateInputs[0].value);
-    //   }
-    //   if (dateInputs[1].value !== '') {
-    //     localStorage.setItem('second-date-seconds', dateInputs[1].value);
-    //   }
-    //   fetch(`https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[0].id}&to_city_id=${inputs[1].id}`)
-    //     .then((response) => response.json())
-    //     .then((data) => localStorage.setItem('direction-there', JSON.stringify(data.items)));
-    // setTimeout(() => window.location.reload(), 1000);
-    // setMain(animLoading);
-    // setLine(2);
-    // lineProgress();
-    // setMain(firstMain);
-    // });
+    const btn = document.getElementById('btn-search');
+    btn.style.width = '17.5%';
+    btn.addEventListener('click', (e) => {
+      localStorage.clear();
+      e.preventDefault();
+      const inputs = document.querySelectorAll('.form-input');
+      if (inputs[0].classList.contains('first')) {
+        localStorage.setItem('first-city', inputs[0].value);
+        localStorage.setItem('first-city-id', inputs[0].id);
+      }
+      if (inputs[1].classList.contains('second')) {
+        localStorage.setItem('second-city', inputs[1].value);
+        localStorage.setItem('second-city-id', inputs[1].id);
+      }
+      const dateInputs = document.querySelectorAll('.form-input-date');
+      if (dateInputs[0].value !== '') {
+        localStorage.setItem('first-date-seconds', dateInputs[0].value);
+      }
+      if (dateInputs[1].value !== '') {
+        localStorage.setItem('second-date-seconds', dateInputs[1].value);
+      }
+      fetch(`https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[0].id}&to_city_id=${inputs[1].id}`)
+        .then((response) => response.json())
+        .then((data) => localStorage.setItem('direction-there', JSON.stringify(data.items)));
+    });
   }, []);
   useEffect(() => {
     lineProgress();
-  });
+  }, [line]);
   useEffect(() => {
-    const btn = document.querySelectorAll('.select-seats-btn');
-    btn.forEach((button) => {
-      button.addEventListener('click', (e) => {
+    setTimeout(() => {
+      const btns = document.querySelectorAll('.select-seats-btn');
+      btns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
         e.preventDefault();
-        setRight(resSelectSeats);
-        setMain(firstMain);
-      });
-    });
-  });
-  useEffect(() => {
-    const btn = document.querySelector('.button-next-btns');
-    if (btn) {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        // console.log('click');
-        // const paragraphs = document.querySelectorAll('.paragraph');
-        // paragraphs[1].classList.add('paragraph-active');
-        // paragraphs[1].querySelector('.triandle-end').classList.add('triangle-active');
-        // paragraphs[1].previousElementSibling.querySelector('.start-triangle').classList.add('start-triangle-active');
-        // setRight(resPassengers);
-      });
-    }
-  });
+        const date = JSON.parse(localStorage.getItem('direction-there'));
+        const result = date.find((el) => el.departure._id === e.target.id);
+        localStorage.setItem('chosen-ticket', JSON.stringify(result));
+        setMain(<main className='main-contain'><LeftSection /><SelectSeats /></main>);
+      })
+      })
+    }, 2000);
+  }, []);
+  // useEffect(() => {
+  //   // const btn = document.querySelector('.button-next-btns');
+  //   // if (btn) {
+  //   //   btn.addEventListener('click', (e) => {
+  //   //     e.preventDefault();
+  //   //     // console.log('click');
+  //   //     // const paragraphs = document.querySelectorAll('.paragraph');
+  //   //     // paragraphs[1].classList.add('paragraph-active');
+  //   //     // paragraphs[1].querySelector('.triandle-end').classList.add('triangle-active');
+  //   //     // paragraphs[1].previousElementSibling.querySelector('.start-triangle').classList.add('start-triangle-active');
+  //   //     // setRight(resPassengers);
+  //   //   });
+  //   // }
+  // });
   return (
     <>
       <header className='train-header'>
@@ -135,7 +135,9 @@ export function TrainSelection() {
           {orders}
         </div>
       </header>
+      <div className='mains-container'>
         {main}
+      </div>
       <Footer />
     </>
   );

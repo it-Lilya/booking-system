@@ -24,7 +24,7 @@ function changeFirst() {
 }
 
 export const Price = () => {
-  const [firstPrice, setFirstPrice] = useState('3000');
+  const [firstPrice, setFirstPrice] = useState('1920');
   const [endPrice, setEndPrice] = useState('5800');
 
   function firstPriceChange(e) {

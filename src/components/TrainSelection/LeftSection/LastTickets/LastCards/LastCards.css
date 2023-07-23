@@ -42,7 +42,7 @@
 .panel-options-icons {
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    /* width: 30%; */
 }
 .icons-options {
     background-size: cover;
@@ -50,6 +50,7 @@
     height: 27px;
     background-size: contain;
     background-repeat: no-repeat;
+    margin-right: 15px;
 }
 .icons-options-wifi {
     background-image: url('/src/images/wi-fi.png');

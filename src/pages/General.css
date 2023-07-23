@@ -2,7 +2,6 @@
     background: rgb(0, 0, 0);
     z-index: -1;
     opacity: 0.8;
-    /* position: absolute; */
 }
 .error-window {
     display: none;
@@ -10,10 +9,12 @@
 .window-active {
     display: block;
     position: absolute;
-    top: 5%;
+    content: '';
+    top: 30%;
     left: 30%;
-    width: 600px;
-    z-index: 2;
+    right: 30%;
+    width: 40%;
+    z-index: 20;
     background: white;
 }
 .window-header {

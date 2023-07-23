@@ -6,7 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  width: 1920px;
+  min-width: 1920px;
   background-color: #e5e5e5;
   user-select: none;
 }

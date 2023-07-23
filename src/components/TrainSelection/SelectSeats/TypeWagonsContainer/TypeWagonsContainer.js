@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './TypeWagonsContainer.css';
 
-export function TypeWagonsContainer() {
+export function TypeWagonsContainer({ element }) {
+  // useEffect(() => {
+  //    fetch(`https://students.netoservices.ru/fe-diplom/routes/${element.departure._id}/seats?`)
+  //    .then((res) => res.json())
+  //    .then((data) => console.log(data));
+  // }, []);
+  useEffect(() => {
+    console.log(element);
+  })
   return (
     <div className='general-type-wagons'>
     <h4>Тип вагона</h4>

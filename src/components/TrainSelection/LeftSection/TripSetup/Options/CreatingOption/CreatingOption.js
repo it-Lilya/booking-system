@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import './CreatingOption.css';
 
-function movement(e) {
-  e.classList.toggle('switch-on');
-  if (e.parentElement.classList.contains('checking')) {
-    e.parentElement.classList.toggle('on-parent');
-  }
-}
-
 export const CretingOption = () => {
   const [check, setCheck] = useState({
     coupe: false,
@@ -17,64 +10,68 @@ export const CretingOption = () => {
     wifi: false,
     express: false,
   });
+  function movement(e) {
+    if (e.target.classList.contains('checkbox-input')) {
+      e.target.classList.toggle('switch-on');
+      e.target.parentElement.classList.toggle('on-parent');
+    }
+    if (e.target.classList.contains('checking')) {
+      e.target.classList.toggle('on-parent');
+      e.target.firstChild.classList.toggle('switch-on');
+    }
+  }
   return (
       <div className='options-container'>
-        <div className='option-element checkbox-coupe'>
+        <div className='option-element checkbox-coupe coupe' onClick={movement}>
           <span className='option-icon coupe-img'></span>
           <p className='option-title'>Купе</p>
-          <div className='checking' onClick={(e) => {
+          <div className='checking' onClick={() => {
             setCheck({ ...check, coupe: !check.coupe });
-            movement(e.target);
           }}>
             <input className='checkbox-input option-switch' type='checkbox' defaultValue={check.coupe}/>
           </div>
         </div>
-        <div className='option-element checkbox-seat'>
+        <div className='option-element checkbox-seat reserved' onClick={movement}>
           <span className='option-icon seat-img'></span>
           <p className='option-title'>Плацкарт</p>
-          <div className='checking' onClick={(e) => {
-            setCheck({ ...check, seat: !check.seat });
-            movement(e.target);
+          <div className='checking' onClick={() => {
+            setCheck({ ...check, reserved: !check.reserved });
           }}>
-            <input className='checkbox-input option-switch' type='checkbox' defaultValue={check.seat}/>
+            <input className='checkbox-input option-switch' type='checkbox' defaultValue={check.reserved}/>
           </div>
         </div>
-        <div className='option-element checkbox-seated'>
+        <div className='option-element checkbox-seated seated' onClick={movement}>
           <span className='option-icon seated-img'></span>
           <p className='option-title'>Сидячий</p>
-          <div className='checking' onClick={(e) => {
+          <div className='checking' onClick={() => {
             setCheck({ ...check, seated: !check.seated });
-            movement(e.target);
           }}>
             <input className='checkbox-input option-switch' type='checkbox' defaultValue={check.seated}/>
           </div>
         </div>
-        <div className='option-element checkbox-lux'>
+        <div className='option-element checkbox-lux lux' onClick={movement}>
           <span className='option-icon lux-img'></span>
           <p className='option-title'>Люкс</p>
-          <div className='checking' onClick={(e) => {
+          <div className='checking' onClick={() => {
             setCheck({ ...check, lux: !check.lux });
-            movement(e.target);
           }}>
             <input className='checkbox-input option-switch' type='checkbox' defaultValue={check.lux}/>
           </div>
         </div>
-        <div className='option-element checkbox-wifi'>
+        <div className='option-element checkbox-wifi wifi' onClick={movement}>
           <span className='option-icon wifi-img'></span>
           <p className='option-title'>Wi-Fi</p>
-          <div className='checking' onClick={(e) => {
+          <div className='checking' onClick={() => {
             setCheck({ ...check, wifi: !check.wifi });
-            movement(e.target);
           }}>
             <input className='checkbox-input option-switch' type='checkbox' defaultValue={check.wifi}/>
           </div>
         </div>
-        <div className='option-element checkbox-express'>
+        <div className='option-element checkbox-express express' onClick={movement}>
           <span className='option-icon express-img'></span>
           <p className='option-title'>Экспресс</p>
-          <div className='checking' onClick={(e) => {
+          <div className='checking' onClick={() => {
             setCheck({ ...check, express: !check.express });
-            movement(e.target);
           }}>
             <input className='checkbox-input option-switch' type='checkbox' defaultValue={check.express}/>
           </div>

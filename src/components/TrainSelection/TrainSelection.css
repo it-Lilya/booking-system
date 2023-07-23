@@ -1,12 +1,16 @@
+.train-header {
+  border: 1px solid;
+}
 .train-image {
     position: relative;
     width: 100%;
+    height: 574px;
 }
 .train-image::before {
     content: '';
     position: absolute;
     width: 100%;
-    height: 445px;
+    height: 574px;
     background: url('/src/images/Backgroun-selection.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -22,16 +26,34 @@
     padding: 10px 0;
 }
 .train-form-container {
-    width: 77%;
+    width: 80%;
+    margin: 200px auto;
+    /* width: 50%; */
+    /* height: 370px;
+    margin: 140px auto; */
+    /* width: 75%; */
+    /* border: 1px solid red; */
+    /* position: absolute;
+    content: ''; */
+    /* width: 100px; */
+    /* background: rgba(41, 41, 41, 0.8); */
+
+}
+.train-form-container::before {
+    /* height: 100px; */
+    /* width: 2000px; */
+    /* position: absolute;
     content: '';
-    height: 284px;
-    margin: 100px auto;
+    z-index: 1;
+    /* background-color: rgba(41, 41, 41, 0.8);
+    opacity: 0.5; 
+    background: rgba(41, 41, 41, 0.8);
+    z-index: 10; */
 }
 .train-form {
-    width: 97%;
+    /* width: 97%; */
     display: flex;
     justify-content: space-between;
-    height: 120px;
 }
 .blocks-train {
     height: 10px;
@@ -43,25 +65,30 @@
 .main-contain {
     position: relative;
     content: '';
-    width: 77%;
-    margin: 150px auto;
+    width: 75%;
+    margin: 100px auto;
     padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-self: baseline;
+}
+.mains-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -150px;
+    margin: auto;
 }
 .animation {
     background-color: rgb(62, 60, 65);
     width: 100%;
     height: 750px;
     position: relative;
-    z-index: 1;
-    margin-bottom: -110px;
+    height: 1000px;
 } 
 .search-progress-line {
     height: 8px;
     background: #ffa800;
-    z-index: 12;
+    z-index: 1;
 }
 .search-progress-text {
     width: 170px;
@@ -82,5 +109,5 @@
     margin-left: 20%;
     z-index: 10;
     height: 600px;
-    margin-top: 100px;
+    margin-top: 300px;
 }

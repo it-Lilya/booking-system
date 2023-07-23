@@ -20,9 +20,7 @@ function openCalendar(e) {
 
 function onChange(ev) {
   const date = format(ev, 'dd.MM.yyyy');
-  const input = document
-    .querySelector('.open-calendar')
-    .parentElement.querySelector('.form-input-date');
+  const input = document.querySelector('.open-calendar').parentElement.querySelector('.form-input-date');
   input.value = date;
   input.nextElementSibling.nextElementSibling.classList.remove('open-calendar');
   const btn = document.querySelector('.search-button');

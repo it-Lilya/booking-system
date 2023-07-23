@@ -38,7 +38,6 @@ function changeSecond() {
     input.addEventListener('input', (e) => {
       const minVal = parseInt(rangeInput[0].value, 10);
       const maxVal = parseInt(rangeInput[1].value, 10);
-
       if (maxVal - minVal < difference) {
         if (e.target.className === 'range-min') {
           rangeInput[0].value = maxVal - difference;
@@ -56,7 +55,6 @@ function changeSecond() {
     });
   });
 }
-
 export const SliderTime = () => {
   const [timeFirst, setFirst] = useState('4:10');
   const [timeSecond, setSecond] = useState('19:26');
@@ -69,10 +67,7 @@ export const SliderTime = () => {
     const timestamp = e.target.value;
     const hours = Math.floor(timestamp / 60 / 60);
     const minutes = Math.floor(timestamp / 60) - hours * 60;
-    const formated = [
-      hours.toString().padStart(2, '0'),
-      minutes.toString().padStart(2, '0'),
-    ];
+    const formated = [hours, minutes.toString().padStart(2, '0')];
     if (e.target.parentElement.classList.contains('range-inputs-first')) {
       setFirst(`${formated[0]}:${formated[1]}`);
     } else {
@@ -83,16 +78,14 @@ export const SliderTime = () => {
     const timestamp = e.target.value;
     const hours = Math.floor(timestamp / 60 / 60);
     const minutes = Math.floor(timestamp / 60) - hours * 60;
-    const formated = [
-      hours.toString().padStart(2, '0'),
-      minutes.toString().padStart(2, '0'),
-    ];
+    const formated = [hours, minutes.toString().padStart(2, '0')];
     if (e.target.parentElement.classList.contains('range-inputs-first')) {
       setSecond(`${formated[0]}:${formated[1]}`);
     } else {
       setFourth(`${formated[0]}:${formated[1]}`);
     }
   }
+
   return (
     <>
       <div className='direction-times'>
@@ -103,7 +96,7 @@ export const SliderTime = () => {
         <div className='range-inputs-first'>
           <input
             type='range'
-            className='range-min'
+            className='range-min range-min-from'
             min='0'
             max='86400'
             defaultValue='15000'
@@ -111,14 +104,13 @@ export const SliderTime = () => {
           ></input>
           <input
             type='range'
-            className='range-max'
+            className='range-max range-max-from'
             min='0'
             max='86400'
             defaultValue='70000'
             onChange={formatTimeSecond}
           ></input>
         </div>
-
         <div className='line-input-first'>
           <span className='result'>{timeFirst}</span>
           <input type='number' className='input-min result-input' />
@@ -127,7 +119,6 @@ export const SliderTime = () => {
           <span className='result'>{timeSecond}</span>
         </div>
       </div>
-
       <div className='direction-times'>
         <h4 className='direction-title-time second-time'>Время прибытия</h4>
         <div className='slider-second'>
@@ -136,7 +127,7 @@ export const SliderTime = () => {
         <div className='range-inputs-second'>
           <input
             type='range'
-            className='range-min'
+            className='range-min range-min-to'
             min='0'
             max='86400'
             defaultValue='15000'
@@ -144,7 +135,7 @@ export const SliderTime = () => {
           ></input>
           <input
             type='range'
-            className='range-max'
+            className='range-max range-max-to'
             min='0'
             max='86400'
             defaultValue='70000'

@@ -4,7 +4,7 @@ import format from 'date-fns/format';
 export function NewCardDirection({ back }) {
   function converterDate(e) {
     const date = new Date(e * 1000);
-    const formatDate = format(date, 'dd/MM/yyyy HH:mm');
+    const formatDate = format(date, 'HH:mm');
     return formatDate;
   }
   function durationTime(e) {

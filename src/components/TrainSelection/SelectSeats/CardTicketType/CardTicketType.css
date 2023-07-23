@@ -1,8 +1,26 @@
+/* .tickets-type-wagons {
+    background-color: #FFA800;
+    opacity: 0.4;
+}
+.tickets-wagon-information{
+    border: 1px solid red;
+} */
+/*.number-wagon-cards
+.tickets-wagon-column */
 /* .tickets-type-wagons-container {
     height: 100px;
     display: flex;
     justify-content: space-between;
     padding: 10px 50px 0 20px;
+} */
+.number-wagon-cards {
+    margin-left: 7px;
+    font-family: Roboto-Bold;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.number-wagon-active {
+    color: white;
 }
 .tickets-type-icon {
     display: flex;
@@ -64,6 +82,7 @@
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .tickets-wagon-information p {
     font-family: Roboto;
@@ -223,4 +242,4 @@
     background-image: url('/src/images/scheme.png');
     background-size: contain;
     background-repeat: no-repeat;
-} */
+}

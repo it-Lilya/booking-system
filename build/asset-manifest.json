@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/booking-system/static/css/main.39bb15e8.css",
-    "main.js": "/booking-system/static/js/main.a1cb8b27.js",
-    "static/js/787.2c68170a.chunk.js": "/booking-system/static/js/787.2c68170a.chunk.js",
+    "main.css": "/booking-system/static/css/main.76610d95.css",
+    "main.js": "/booking-system/static/js/main.5565a1f4.js",
+    "static/js/787.9d451dd9.chunk.js": "/booking-system/static/js/787.9d451dd9.chunk.js",
     "static/media/work.png": "/booking-system/static/media/work.2f68311b0436e88b859b.png",
     "static/media/image.png": "/booking-system/static/media/image.23031b7e138a52623dff.png",
     "static/media/Backgroun-selection.png": "/booking-system/static/media/Backgroun-selection.9879decf332e941df8dc.png",
@@ -15,12 +15,12 @@
     "static/media/loading.gif": "/booking-system/static/media/loading.4e2e699c349a7e5f3147.gif",
     "static/media/scheme.png": "/booking-system/static/media/scheme.4c1bf9dbe698884bb860.png",
     "index.html": "/booking-system/index.html",
-    "main.39bb15e8.css.map": "/booking-system/static/css/main.39bb15e8.css.map",
-    "main.a1cb8b27.js.map": "/booking-system/static/js/main.a1cb8b27.js.map",
-    "787.2c68170a.chunk.js.map": "/booking-system/static/js/787.2c68170a.chunk.js.map"
+    "main.76610d95.css.map": "/booking-system/static/css/main.76610d95.css.map",
+    "main.5565a1f4.js.map": "/booking-system/static/js/main.5565a1f4.js.map",
+    "787.9d451dd9.chunk.js.map": "/booking-system/static/js/787.9d451dd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.39bb15e8.css",
-    "static/js/main.a1cb8b27.js"
+    "static/css/main.76610d95.css",
+    "static/js/main.5565a1f4.js"
   ]
 }

@@ -17,7 +17,7 @@ import { NavLink } from 'react-router-dom';
 // }
 export function ProgressOrder() {
   return (
-  <div className='progress-order'>
+  <div className='progress-order progress-hidden'>
       <div className='progress-container'>
             <NavLink className='paragraph paragraph-active'>
                 <div className='btn-and-text'>

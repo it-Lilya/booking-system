@@ -10,9 +10,9 @@ export const Footer = () => {
     setInput(e.target.value);
   }
 
-  function submit() {
+  function submit(e) {
     if (!validateEmail(input)) {
-      // alert('Email указана некорректно.\n Пример: mail@mail.com');
+      alert('Email указана некорректно.\n Пример: mail@mail.com');
       return;
     }
     fetch(`https://netology-trainbooking.netoservices.ru/subscribe?email=${input}`, {
@@ -35,33 +35,20 @@ export const Footer = () => {
           <h4 className='contacts-title'>Свяжитесь с нами</h4>
           <ul className='contacts-list'>
             <li className='contacts-container'>
-              <a className='contacts-item cont-phone' href='tel:88000000000'>
-                8 (800) 000 00 00
+              <a className='contacts-item cont-phone' href='tel:88000000000'>8 (800) 000 00 00
               </a>
             </li>
             <li>
-              <a
-                className='contacts-item cont-email'
-                href='mailto:inbox@mail.ru'
-              >
-                inbox@mail.ru
+              <a className='contacts-item cont-email' href='mailto:inbox@mail.ru'>inbox@mail.ru
               </a>
             </li>
             <li>
-              <a
-                className='contacts-item cont-skype'
-                target='_blank'
-                href='tu.train.tickets'
-              >
+              <a className='contacts-item cont-skype' target='_blank' href='tu.train.tickets'>
                 tu.train.tickets
               </a>
             </li>
             <li>
-              <a
-                className='contacts-item cont-address'
-                target='_blank'
-                href='google.maps.com'
-              >
+              <a className='contacts-item cont-address' target='_blank' href='google.maps.com'>
                 г. Москва ул. Московская 27-35 555 555
               </a>
             </li>
@@ -77,8 +64,7 @@ export const Footer = () => {
                 type='text'
                 defaultValue={input}
                 placeholder='e-mail'
-                onChange={inputSubscribe}
-              ></input>
+                onChange={inputSubscribe}></input>
               <button className='sub-form-btn' type='button' onClick={submit}>
                 Отправить
               </button>

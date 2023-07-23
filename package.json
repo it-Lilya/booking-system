@@ -1,6 +1,6 @@
 {
-  "homepage": "https://it-Lilya.github.io/booking-system",
-  "name": "ut",
+  "homepage": "https://it-Lilya.github.io/booking-system/",
+  "name": "booking-system",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -19,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-deploy": "react-scripts build && yarn deploy" 
   },
   "eslintConfig": {
     "extends": [
