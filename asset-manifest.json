@@ -1,26 +1,23 @@
 {
   "files": {
-    "main.css": "/booking-system/static/css/main.76610d95.css",
-    "main.js": "/booking-system/static/js/main.65abaa4c.js",
+    "main.css": "/booking-system/static/css/main.067f0fcc.css",
+    "main.js": "/booking-system/static/js/main.b6f9f27e.js",
     "static/js/787.9d451dd9.chunk.js": "/booking-system/static/js/787.9d451dd9.chunk.js",
     "static/media/work.png": "/booking-system/static/media/work.2f68311b0436e88b859b.png",
     "static/media/image.png": "/booking-system/static/media/image.23031b7e138a52623dff.png",
     "static/media/Backgroun-selection.png": "/booking-system/static/media/Backgroun-selection.9879decf332e941df8dc.png",
-    "static/media/Roboto-Thin.ttf": "/booking-system/static/media/Roboto-Thin.1711b41f3ae4cb322eea.ttf",
     "static/media/Roboto-Regular.ttf": "/booking-system/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
-    "static/media/Roboto-Bold.ttf": "/booking-system/static/media/Roboto-Bold.75371f53f06181df75f1.ttf",
-    "static/media/Roboto-Light.ttf": "/booking-system/static/media/Roboto-Light.8be2d1487420548b3b8d.ttf",
     "static/media/user-second.png": "/booking-system/static/media/user-second.b4e3ed2619c27f0f4fd2.png",
     "static/media/user-first.png": "/booking-system/static/media/user-first.09e65125397ea7aef925.png",
     "static/media/loading.gif": "/booking-system/static/media/loading.4e2e699c349a7e5f3147.gif",
     "static/media/scheme.png": "/booking-system/static/media/scheme.4c1bf9dbe698884bb860.png",
     "index.html": "/booking-system/index.html",
-    "main.76610d95.css.map": "/booking-system/static/css/main.76610d95.css.map",
-    "main.65abaa4c.js.map": "/booking-system/static/js/main.65abaa4c.js.map",
+    "main.067f0fcc.css.map": "/booking-system/static/css/main.067f0fcc.css.map",
+    "main.b6f9f27e.js.map": "/booking-system/static/js/main.b6f9f27e.js.map",
     "787.9d451dd9.chunk.js.map": "/booking-system/static/js/787.9d451dd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.76610d95.css",
-    "static/js/main.65abaa4c.js"
+    "static/css/main.067f0fcc.css",
+    "static/js/main.b6f9f27e.js"
   ]
 }
