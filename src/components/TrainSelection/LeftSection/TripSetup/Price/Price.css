@@ -6,7 +6,6 @@
 }
 
 .price-title {
-    font-family: Roboto;
     font-weight: 600;
     font-size: 1.5rem;
     color: white;
@@ -18,7 +17,6 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-family: Roboto;
     font-weight: 400;
     font-size: 1.125rem;
     color: white;

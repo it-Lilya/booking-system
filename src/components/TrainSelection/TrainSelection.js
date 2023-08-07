@@ -15,22 +15,26 @@ function workWithForm() {
   trainFormContainer.classList.add('train-form-container');
   trainFormContainer.style.width = '75%';
   trainFormContainer.style.height = '310px';
-  trainFormContainer.querySelector('.search-button').style.right = '2%';
-  trainFormContainer.querySelector('.search-button').style.top = '62%';
+  const btn = trainFormContainer.querySelector('.search-button');
+  btn.style.right = '3.7%';
+  btn.style.top = '62%';
+  btn.style.width = '20%';
   const trainForm = trainFormContainer.firstChild;
   trainForm.classList.add('train-form');
-  const trainBlocks = trainForm.childNodes;
-  trainBlocks.forEach((e) => {
-    e.classList.add('blocks-train');
-  });
+  trainForm.style.display = 'flex';
+  const trainBlocks = trainForm.children;
+  trainBlocks[0].classList.add('blocks-train-title');
+  trainBlocks[2].classList.add('blocks-train-title');
+  trainBlocks[1].style.width = '48%';
+  trainBlocks[1].style.marginTop = '100px';
+  trainBlocks[3].style.width = '48%';
+  trainBlocks[3].style.marginTop = '99px';
+  trainBlocks[3].style.marginLeft = '5%';
   const cityInput = document.querySelectorAll('.form-input');
   cityInput[0].value = localStorage.getItem('first-city');
   cityInput[0].id = localStorage.getItem('first-city-id');
   cityInput[1].value = localStorage.getItem('second-city');
   cityInput[1].id = localStorage.getItem('second-city-id');
-  const dateInputs = document.querySelector('.date-inputs');
-  dateInputs.style.width = '140%';
-  dateInputs.style.marginRight = '-80px'
   const inpDate = document.querySelectorAll('.form-input-date');
   if (localStorage.getItem('first-date') !== '') {
     inpDate[0].value = localStorage.getItem('first-date');
@@ -42,32 +46,61 @@ function workWithForm() {
 export function TrainSelection() {
   // const resPassengers = <Passengers />;
   const [line, setLine] = useState(2);
-  const animLoading = <main className='animation'>
-    <div className='search-progress-line'></div>
-    <p className='search-progress-text'>Идет поиск</p>
-    <img className='loading' src={animation} alt='loading...'></img>
-  </main>;
+  const animLoading = (
+    <main className='animation'>
+      <div className='search-progress-line'></div>
+      <p className='search-progress-text'>Идет поиск</p>
+      <img className='loading' src={animation} alt='loading...'></img>
+    </main>
+  );
   const [main, setMain] = useState(animLoading);
-  const firstMain = useState(<main className='main-contain'><LeftSection /><RightSection /></main>);
+  const firstMain = useState(
+    <main className='main-contain'>
+      <LeftSection />
+      <RightSection />
+    </main>
+  );
   const orders = <ProgressOrder />;
+  function openTicket() {
+    setTimeout(() => {
+      const btns = document.querySelectorAll('.select-seats-btn');
+      btns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const date = JSON.parse(localStorage.getItem('direction-there'));
+          const result = date.find((el) => el.departure._id === e.target.id);
+          localStorage.setItem('chosen-ticket', JSON.stringify(result));
+          setMain(
+            <main className='main-contain'>
+              <LeftSection />
+              <SelectSeats />
+            </main>
+          );
+        });
+      });
+    }, 22);
+  }
   function lineProgress() {
     setTimeout(() => {
       if (line <= 99) {
         setLine(Number(line) + 2);
-        document.querySelector('.search-progress-line').style.width = `${line}%`;
+        document.querySelector(
+          '.search-progress-line'
+        ).style.width = `${line}%`;
       }
       if (line === 100) {
         clearTimeout();
         setLine(100);
         setMain(firstMain);
-        document.querySelector('.progress-order').classList.remove('progress-hidden')
+        document
+          .querySelector('.progress-order')
+          .classList.remove('progress-hidden');
+        openTicket();
       }
-    }, 20);
+    }, 10);
   }
   useEffect(() => {
     workWithForm();
     const btn = document.getElementById('btn-search');
-    btn.style.width = '17.5%';
     btn.addEventListener('click', (e) => {
       localStorage.clear();
       e.preventDefault();
@@ -87,9 +120,13 @@ export function TrainSelection() {
       if (dateInputs[1].value !== '') {
         localStorage.setItem('second-date-seconds', dateInputs[1].value);
       }
-      fetch(`https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[0].id}&to_city_id=${inputs[1].id}`)
+      fetch(
+        `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[0].id}&to_city_id=${inputs[1].id}`
+      )
         .then((response) => response.json())
-        .then((data) => localStorage.setItem('direction-there', JSON.stringify(data.items)));
+        .then((data) =>
+          localStorage.setItem('direction-there', JSON.stringify(data.items))
+        );
     });
   }, []);
   useEffect(() => {
@@ -97,17 +134,25 @@ export function TrainSelection() {
   }, [line]);
   useEffect(() => {
     setTimeout(() => {
-      const btns = document.querySelectorAll('.select-seats-btn');
+      const btns = document.querySelectorAll('.select-top-icon');
       btns.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const date = JSON.parse(localStorage.getItem('direction-there'));
-        const result = date.find((el) => el.departure._id === e.target.id);
-        localStorage.setItem('chosen-ticket', JSON.stringify(result));
-        setMain(<main className='main-contain'><LeftSection /><SelectSeats /></main>);
-      })
-      })
-    }, 2000);
+        if (btn !== 'undefined' && btn !== null) {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setMain(animLoading);
+            setLine(2);
+            document
+              .querySelector('.progress-order')
+              .classList.add('progress-hidden');
+          });
+        }
+      });
+    }, 0);
+  }, [main]);
+  useEffect(() => {
+    document.addEventListener('click', () => {
+      openTicket();
+    });
   }, []);
   // useEffect(() => {
   //   // const btn = document.querySelector('.button-next-btns');
@@ -135,9 +180,7 @@ export function TrainSelection() {
           {orders}
         </div>
       </header>
-      <div className='mains-container'>
-        {main}
-      </div>
+      <div className='mains-container'>{main}</div>
       <Footer />
     </>
   );

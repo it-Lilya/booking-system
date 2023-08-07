@@ -1,35 +1,61 @@
 import React, { useEffect, useState } from 'react';
 import './CardTicketType.css';
 import { TypeWagonsContainer } from '../TypeWagonsContainer/TypeWagonsContainer';
+import { NewActiveCard } from './NewActiveCard';
 
-export function CardTicketType({ arr }) {
+export function CardTicketType() {
+    const ticket = JSON.parse(localStorage.getItem('chosen-ticket'));
+    const [arr, setArr] = useState([]);
     const [active, setActive] = useState(arr[0]);
-    function activeWagon(e) {
-        if (e.target.classList.contains('number-wagon-first')) {
-            document.querySelector('.number-wagon-second').classList.remove('number-wagon-active');
-            setActive(arr[1])
-        } else {
-            document.querySelector('.number-wagon-first').classList.remove('number-wagon-active');
-            setActive(arr[0])
-        }
-        e.target.classList.add('number-wagon-active'); 
-    }
     useEffect(() => {
-        // console.log(active);
-    }, [active])
+        fetch(`https://students.netoservices.ru/fe-diplom/routes/${ticket.departure._id}/seats?`)
+            .then((res) => res.json())
+            .then((data) => {
+                setArr(data);
+                setActive(data[0])
+            });
+    }, [])
+    useEffect(() => {
+        const cardsWagon = document.querySelectorAll('.number-wagon-cards');
+        if (cardsWagon[0] !== undefined) {
+            cardsWagon[0].classList.add('number-wagon-active');
+        }
+    }, [arr]);
+    function numberWagon(e) {
+        if (String(parseInt(e.match(/\d+/))).length === 1) {
+            return `${0}${parseInt(e.match(/\d+/))}`
+        }
+        return parseInt(e.match(/\d+/));
+    }
+    function activeWagons(e) {
+        const cardsWagon = document.querySelectorAll('.number-wagon-cards');
+        cardsWagon.forEach((card) => {
+            card.classList.remove('number-wagon-active');
+            e.target.classList.add('number-wagon-active');
+        })
+        if (cardsWagon[0].classList.contains('number-wagon-active')) {
+            setActive(arr[0]);
+        }
+        if (cardsWagon[1]!== undefined && cardsWagon[1].classList.contains('number-wagon-active')) {
+            setActive(arr[1]);
+        }
+        if (cardsWagon[2]!== undefined && cardsWagon[2].classList.contains('number-wagon-active')) {
+            setActive(arr[2]);
+        }
+    }
     return (
         <div className='tickets-type-wagons'>
-            <TypeWagonsContainer element={active}/>
+            <TypeWagonsContainer />
             <div className='tickets-wagon-information'>
-                <p>Вагоны 
-                    <span className='number-wagon-cards number-wagon-first number-wagon-active' onClick={activeWagon}>07</span>
-                    <span className='number-wagon-cards number-wagon-second' onClick={activeWagon}>09</span>
-                </p>
+                <p>Вагоны</p>
+                <div className='wagons-contain'>
+                    {arr.map((el) => (
+                        <p className='number-wagon-cards number-wagon-first' onClick={activeWagons}>{numberWagon(el.coach.name)}</p>  
+                    ))}
+                </div>
                 <p className='text-'>Нумерация вагонов начинается с головы поезда</p>
             </div>
-            <div className='tickets-wagon-column'>
-
-            </div>
+           <NewActiveCard card={active} />
         </div>
     )
 }

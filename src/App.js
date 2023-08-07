@@ -8,12 +8,12 @@ import { General } from './pages/General';
 
 export default function App() {
   return (
-    <BrowserRouter basename={`/${REPO_NAME}/`}>
+    <BrowserRouter basename={`/${REPO_NAME}`}>
       <Routes className='App'>
         <Route path='/' element={<General/>}>
           {/* <Route path='/train-selection/' element={<TrainSelection />}/> */}
         </Route>
-        <Route path='/train-selection/' element={<TrainSelection />}/>
+        <Route path='/train-selection' element={<TrainSelection />}/>
         <Route path='/*' element={<Navigate to='/' />}/>
       </Routes>
       </BrowserRouter>

@@ -38,12 +38,10 @@
     border-bottom: 1px dashed #928F94;
 }
 .window-text-first {
-    font-family: Roboto-Bold;
     font-size: 1.5rem;
     font-weight: 500;
 }
-.window-text-second {
-    font-family: Roboto;
+.window-text-second { 
     font-size: 1.125rem;
     font-weight: 400;
     margin-top: 20px;
@@ -58,7 +56,6 @@
     padding: 12px 35px;
     margin-left: 37%;
     margin-top: 3%;
-    font-family: Roboto-Bold;
     font-size: 1.5rem;
     font-weight: 700;
 }

@@ -4,8 +4,7 @@
 }
 .sort-result-container {
     height: 20px;
-    color: #928f94;
-    font-family: Roboto;
+    color: #928f94; 
     font-size: 1.125rem;
     display: flex;
     justify-content: space-between;
@@ -34,8 +33,7 @@
 }
  .btn-sort {
     background-color: transparent;
-    color: #3E3C41;
-    font-family: Roboto;
+    color: #3E3C41; 
     font-size: 1.125rem;
     width: 87%;
     text-align: start;
@@ -52,8 +50,7 @@
 .sort-number {
     border: none;
     margin-left: 10px;
-    background-color: transparent;
-    font-family: Roboto;
+    background-color: transparent; 
     font-size: 1.125rem;
     color: #928f94;
 }
@@ -61,12 +58,11 @@
     color: black;
 }
 .panel-ticket-page {
-    position: absolute;
-    content: '';
+    margin-left: 50%;
     margin-top: 80px;
     height: 75px;
     right: 10px;
-    width: 35%;
+    width: 50%;
     display: flex;
 }
 .panel-ticket-page button {
@@ -74,7 +70,6 @@
     border-radius: 5px;
     width: 85px;
     height: 100%;
-    font-size: Roboto-Bold;
     font-size: 1.875rem;
     font-weight: 700;
     color: #928F94;

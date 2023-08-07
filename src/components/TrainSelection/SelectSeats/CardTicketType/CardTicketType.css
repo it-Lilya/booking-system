@@ -1,21 +1,21 @@
-/* .tickets-type-wagons {
-    background-color: #FFA800;
-    opacity: 0.4;
+.wagons-contain {
+   display: flex;
+   position: absolute;
+   content: '';
+   margin-left: 5%; 
 }
-.tickets-wagon-information{
-    border: 1px solid red;
-} */
-/*.number-wagon-cards
-.tickets-wagon-column */
-/* .tickets-type-wagons-container {
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 50px 0 20px;
-} */
+.tickets-type-wagons {
+    background: white;
+}
+.tickets-type-wagons h4 {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 .number-wagon-cards {
     margin-left: 7px;
-    font-family: Roboto-Bold;
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -29,13 +29,19 @@
     width: 110px;
 }
 .tickets-type-icon p {
-    margin-top: 12px;
-    font-family: Roboto;
+    margin-top: 12px; 
     font-size: 1.5rem;
     color: #928f94;
 }
 .tickets-type-sedentary {
     background-image: url('/src/images/sedentary.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+.type-sedentary-focus {
+    background-image: url('/src/images/sedentary-focus.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 50px;
@@ -48,8 +54,22 @@
     width: 50px;
     height: 50px;
 }
+.tickets-reserved-focus {
+    background-image: url('/src/images/reserved-focus.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
 .tickets-type-cupe {
     background-image: url('/src/images/coupe.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+.type-cupe-focus {
+    background-image: url('/src/images/coupe-focus.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 50px;
@@ -62,20 +82,12 @@
     width: 50px;
     height: 50px;
 }
-.tickets-type-icon-sedentary:hover div {
-    background-image: url('/src/images/sedentary-focus.png');
-} 
-.tickets-type-icon-reserved:hover div {
-    background-image: url('/src/images/reserved-focus.png');
-}
-.tickets-type-icon-cupe:hover div {
-    background-image: url('/src/images/coupe-focus.png');
-}
-.tickets-type-icon-lux:hover div {
+.type-lux-focus {
     background-image: url('/src/images/lux-focus.png');
-}
-.tickets-type-icon:hover p {
-    color: #ffa800;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
 }
 .tickets-wagon-information {
     background: #FFD98F;
@@ -84,8 +96,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.tickets-wagon-information p {
-    font-family: Roboto;
+.tickets-wagon-information p { 
     font-size: 1.125rem;
 }
 .tickets-wagon-column {
@@ -101,34 +112,47 @@
     align-content: center;
 }
 .wagon-number-information-first {
-    font-family: Roboto-Bold;
     font-size: 4.5rem;
     font-weight: 700;
+    align-items: center;
 }
-.wagon-number-information-second {
-    font-family: Roboto;
+.wagon-number-information-second { 
     font-size: 1.5rem;
 }
 .wagon-information-header {
     width: 80%;
     padding: 20px 30px 10px;
 } 
-.wagon-information-titles {
+.coach-seats {
+    color: black
+}
+ .wagon-information-titles {
     height: 25px;
     display: flex;
     justify-content: space-between;
     padding: 0 22px;
 }
-.wagon-information-titles p {
-    font-family: Roboto;
+.wagon-information-titles p { 
     font-size: 1.125rem;
     color: #928F94;
+    width: 33.3%;
+}
+.position-seats {
+    font-weight: 700;
 }
 .wagon-information-main {
     height: 80%;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    font-size: 1.4rem;
+}
+.coach-price {
+    font-weight: 700;
+}
+.vector-ruble {
+    font-weight: 400;
+    color: #928F94;
 }
 .wagon-information-left {
     width: 50%;
@@ -145,14 +169,18 @@
 
 
 .wagon-information-right {
-    width: 23%;
-    margin-right: 2%;
+    position: absolute;
+    content: '';
+    left: 79%
 }
 .wagon-information-icons-container {
     margin-top: 10px;
     height: 35px;
     display: flex;
     justify-content: space-between;
+}
+.wagon-information-icons-container button {
+    margin-right: 20px;
 }
 .wagon-icons-button {
     border: 1px solid #292929;
@@ -212,8 +240,7 @@
     left: -105%;
     width: 110px;
     height: 20px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    font-family: Roboto;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); 
     font-size: 1rem;
     padding-top: 3px;
 }
@@ -228,18 +255,45 @@
 .window-wagon-scheme {
     border-radius: 5px;
     background: #f3f3f3;
-    width: 17%;
-    margin-left: 78%;
+    width: 25%;
+    margin-left: 70%;
     padding: 15px 10px;
 }
 .wagon-scheme-main {
-    width: 95%;
-    margin: auto;
+    width: 67%;
+    position: absolute;
+    content: '';
+    left: 30%;
     padding-top: 50px;
     height: 200px;
 }
+.absolute-number {
+    position: absolute;
+    content: '';
+    z-index: 1;
+    left: 32.5%;
+    width: 45px;
+    height: 25px;
+    background-color: rgb(53, 53, 53);
+    color: white;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 5px;
+}
 .wagon-scheme-main {
-    background-image: url('/src/images/scheme.png');
     background-size: contain;
     background-repeat: no-repeat;
+}
+.first-class-type {
+    background-image: url('/src/images/coach-first.png');
+}
+.second-class-type {
+    background-image: url('/src/images/coach-second.png');
+}
+.third-class-type {
+    background-image: url('/src/images/coach-third.png');
+}
+.fourth-class-type {
+    background-image: url('/src/images/coach-fourth.png');
 }

@@ -5,7 +5,6 @@
     margin-bottom: 120px;
 }
 .information-title {
-    font-family: Roboto;
     font-weight: 500;
     text-transform: uppercase;
     font-size: 25px;
@@ -23,13 +22,11 @@
     width: 97%;
 }
 .texts {
-    font-family: Roboto;
     font-size: 18px;
 }
 .texts:nth-child(n + 2) {
     margin-top: 23px;
 }
 .selection-text {
-    font-family: Roboto-Bold;
     font-weight: 800;
 }

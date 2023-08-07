@@ -37,7 +37,6 @@
 .train-name {
     margin: 20px auto;
     padding-left: 10%;
-    font-family: Roboto-Bold;
     font-weight: 700;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -58,8 +57,7 @@
     height: 100%;
     align-items: baseline;
 }
-.direction-line-city {
-    font-family: Roboto;
+.direction-line-city { 
     font-size: 1.2rem;
     font-weight: 400;
     text-transform: capitalize;
@@ -75,7 +73,7 @@
     transform: rotate(135deg);
 }
 .arrow-train::after {
-    content: "";
+    content: '';
     display: block;
     width: 1px;
     height: 15px;
@@ -144,26 +142,22 @@
     margin-right: -5%;
 }
 .new-card-date {
-    font-family: Roboto-Bold;
     font-size: 1.8rem;
     font-weight: 700;
 }
-.new-card-city {
-    font-family: Roboto;
+.new-card-city { 
     font-size: 1.5rem;
     font-weight: 400;
     color: #292929;
     text-transform: capitalize;
 }
-.new-card-station {
-    font-family: Roboto;
+.new-card-station { 
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 10px;
     color: #928f94;
 }
-.available-time {
-    font-family: Roboto;
+.available-time { 
     font-size: 1.2rem;
     color: #c4c4c4;
     margin-top: 15px;
@@ -235,8 +229,7 @@
     background-color: #ffa800;
     border: none;
     border-radius: 5px;
-    padding: 9px 17px;
-    font-family: Roboto;
+    padding: 9px 17px; 
     font-size: 1.3rem;
     font-weight: 700;
     color: white;
@@ -259,14 +252,12 @@
     height: 30px;
     margin-bottom: 5px;
 }
-.wagons-name {
-    font-family: Roboto;
+.wagons-name { 
     font-size: 1rem;
     font-weight: 400;
     width: 45%;
 }
 .number-of-seats {
-    font-family: Roboto-Bold;
     font-weight: 500;
     color: #ffa800;
     width: 10%;
@@ -279,19 +270,16 @@
 }
 .span-starting {
     color: #928f94;
-    margin-right: 5px;
-    font-family: Roboto;
+    margin-right: 5px; 
 }
 .span-starting-price {
-    font-family: Roboto-Bold;
     font-weight: 700;
     font-size: 1.5rem;
     color: #2d2b2f;
 }
 
 .span-starting-vector {
-    color: #928f94;
-    font-family: Roboto;
+    color: #928f94; 
     font-size: 1.5rem;
     margin-left: 5px;
 }

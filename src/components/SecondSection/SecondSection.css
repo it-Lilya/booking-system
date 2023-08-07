@@ -29,7 +29,6 @@
     margin-bottom: 60px;
 }
 .work-title {
-    font-family: Roboto;
     font-size: 2.25rem;
     text-transform: uppercase;
     color: white;
@@ -40,7 +39,6 @@
     padding: 8px 20px;
     background: none;
     color: white;
-    font-family: Roboto;
     font-size: 1.5rem;
 }
 .work-button:hover {
@@ -97,7 +95,6 @@
 .vector-text {
     width: 90%;
     margin: 25px auto;
-    font-family: Roboto;
     font-size: 1.5rem;
     color: white;
     text-align: center;

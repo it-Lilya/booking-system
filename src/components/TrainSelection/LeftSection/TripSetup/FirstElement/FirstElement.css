@@ -10,7 +10,6 @@
     margin-bottom: 15px;
 }
 .travel-title {
-    font-family: Roboto;
     font-weight: 400;
     font-size: 1.85rem;
     color: white;
@@ -21,7 +20,6 @@
 .travel-date {
     width: 90%;
     height: 40px;
-    font-family: Roboto;
     font-size: 1.125rem;
     padding-left: 7px;
     padding-right: 10px;

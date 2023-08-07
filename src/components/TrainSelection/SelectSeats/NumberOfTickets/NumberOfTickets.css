@@ -7,7 +7,6 @@
     padding-top: 50px;
     padding-bottom: 20px;
     padding-left: 19px;
-    font-family: Roboto-Bold;
     font-size: 1.5rem;
     font-weight: 700;
 }
@@ -28,8 +27,7 @@
     width: 90%;
     padding: 12px 10px; 
     border-radius: 5px;
-    border: 1px solid #928F94;
-    font-family: Roboto;
+    border: 1px solid #928F94; 
     font-size: 1.125rem;
     margin-bottom: 10px;
 }
@@ -43,22 +41,19 @@
 .tickets-third-number {
     width: 33.33%;
 }
-.tickets-number-active p {
-    font-family: Roboto;
+.tickets-number-active p { 
     color: black;
 }
-.tickets-number p {
-    font-family: Roboto;
+.tickets-number p { 
     color: #928F94;
 }
-.tickets-type-wagons {
+/* .tickets-type-wagons {
     background: white;
+    border: 1px solid red;
 }
 .tickets-type-wagons h4 {
     padding-top: 50px;
     padding-bottom: 20px;
-    padding-left: 19px;
-    font-family: Roboto-Bold;
     font-size: 1.5rem;
     font-weight: 700;
-}
+} */

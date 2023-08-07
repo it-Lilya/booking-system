@@ -1,50 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import format from 'date-fns/format';
 
 export function SelectMain({ element }) {
-  // const [ticket, setTicket] = useState();
-  // useEffect(() => {
-  //   // setTicket(JSON.parse(localStorage.getItem('chosen-ticket')));
-  //   //   const newCard = document.querySelector('.new-card-info');
-  //   //   newCard.style.width = '120%';
-  //   //   document.querySelectorAll('.select-top-panel');
-  // console.log(element)
-  // }, []);
-  // console.log(element);
-  // console.log(element)
-  // const [received, setReceived] = useState();
-  // const [seats, setSeats] = useState();
-  //  useEffect(() => {
-  //    fetch(`https://students.netoservices.ru/fe-diplom/routes/${element.departure._id}/seats?`)
-  //    .then((res) => res.json())
-  //    .then((data) => setReceived(data));
-  //  }, [])
- 
-  //  useEffect(() => {
-  //    if (received !== undefined) {
-  //      console.log(received);
-  //    }
-  //  }, [received])
-
   function converterDate(e) {
     const date = new Date(e * 1000);
     const formatDate = format(date, 'HH:mm');
     return formatDate;
   }
   function formatedDate(date) {
-    const newDate = new Date(date * 1000);
-    const formatDate = format(newDate, 'HH:mm');
-    if (formatDate[0] === '0') {
-      return `${formatDate[1]}\u00A0часов ${formatDate[3]}${formatDate[4]}\u00A0минут`;
+    const hour = Math.floor(date / 60 / 60);
+    const minutes = Math.floor(date / 60) - (hour * 60);
+    if (hour[0] === '0') {
+      return `${hour}\u00A0часов ${minutes}\u00A0минут`;
     } else {
-      return `${formatDate[0]}${formatDate[1]}\u00A0часов ${formatDate[3]}${formatDate[4]}\u00A0минут`;
+      return `${hour}\u00A0часов ${minutes}\u00A0минут`;
     }
   }
   return (
         <div className='select-seats-contain'>
         <div className='select-top-panel'>
-          <div className='select-top-icon'></div>
-            <button className='select-top-btn'>Выбрать другой поезд</button>
+          <div className='select-top-btn'></div>
+            <button className='select-top-icon'>Выбрать другой поезд</button>
           </div>
         <div className='select-seats-information'>
           <div className='seat-first-container'>

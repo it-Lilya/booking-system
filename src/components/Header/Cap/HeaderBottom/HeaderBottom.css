@@ -10,11 +10,9 @@
 .bottom-tigline {
     width: 45%;
     color: #fff;
-    font-family: Roboto-Thin;
     font-size: 4.5rem;
     font-weight: 100;
 }
 .selection {
-    font-family: Roboto-Bold;
     font-weight: 800;
 }

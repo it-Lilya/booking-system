@@ -1,3 +1,11 @@
+.input-conatiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-top: 17px;
+    width: 100%;
+}
 .citi-hidden{
     display: none;
 }
@@ -7,14 +15,17 @@
     background-color: #310859;
     margin-left: 1px;
     position: absolute;
-    content: '';
-    z-index: 10;
+    content: ''; 
+    top: -120px;
+    z-index: 1;
 }
 .city-list {
     background-color: rgb(233, 228, 228);
     padding: 5px;
     overflow-y: scroll;
     max-height: 100px; 
+    position: absolute;
+    margin-top: 180px;
 }
 .icon-form {
     width: 6%;
@@ -31,10 +42,24 @@
     margin-bottom:7px;
     padding: 5px 5px;
     text-transform: uppercase;
-    font-family: Roboto;
     font-weight: 400;
     font-size: 0.8rem;
 }
 .city-element:hover {
     color: #FFA800;
+}
+.open-error-hidden {
+    display: none;
+}
+.open-error {
+    display: block;
+    position: absolute;
+    content: '';
+    margin-top: 110px;
+    border: 2px solid rgb(247, 153, 168);
+    width: 96%;
+    background-color: rgb(254, 222, 228);
+    padding: 3% 2%;
+    font-weight: 600;
+    border-radius: 5px;
 }

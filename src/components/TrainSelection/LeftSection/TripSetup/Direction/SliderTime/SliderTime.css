@@ -3,7 +3,6 @@
     justify-content: space-between;
 }
 .direction-title-time {
-    font-family: Roboto;
     font-size: 1.25rem;
     font-weight: 400;
     color: white;
@@ -20,7 +19,6 @@
     border: none;
     color: white;
     background-color: transparent;
-    font-family: Roboto;
     font-size: 1rem;
     font-weight: 400;
 }

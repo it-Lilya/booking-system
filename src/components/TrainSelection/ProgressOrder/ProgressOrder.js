@@ -1,20 +1,7 @@
 import React from 'react';
 import './ProgressOrder.css';
 import { NavLink } from 'react-router-dom';
-// function panelSwitching() {
-//   const paragraphs = document.querySelectorAll('.paragraph');
-//   paragraphs.forEach((e) => {
-//     e.addEventListener('click', () => {
-//       e.classList.toggle('paragraph-active');
-//       if (e.querySelector('.triandle-end')) {
-//         e.querySelector('.triandle-end').classList.toggle('triangle-active');
-//       }
-//       if (e.previousElementSibling) {
-//         e.previousElementSibling.querySelector('.start-triangle').classList.toggle('start-triangle-active');
-//       }
-//     });
-//   });
-// }
+
 export function ProgressOrder() {
   return (
   <div className='progress-order progress-hidden'>

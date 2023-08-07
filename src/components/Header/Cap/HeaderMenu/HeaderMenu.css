@@ -3,7 +3,7 @@
     width: 100%;
     background-color: #292929;
     display: flex;
-    height: 70px;
+    height: 94px;
 }
 .menu-container {
     width: 75%;
@@ -14,9 +14,10 @@
 .li {
     text-decoration: none;
     list-style-type: none;
+
+    font-weight: 300;
 }
 .menu-item {
-    font-family: Roboto-Thin;
     margin-right: 30px;
     font-weight: 300;
     font-size: 1.875rem;

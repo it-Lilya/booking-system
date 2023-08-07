@@ -15,7 +15,6 @@
     width: 40%;
 }
 .contacts-title {
-    font-family: Roboto;
     font-size: 1.875rem;
     color: white;
     font-weight: 500;
@@ -33,7 +32,6 @@ li {
 .contacts-item {
     color: white;
     text-decoration: none;
-    font-family: Roboto;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2.0625rem;
@@ -74,14 +72,13 @@ li {
     height: 100%;
 }
 .subscribe-title {
-    font-family: Roboto;
     font-size: 1.875rem;
     font-weight: 500;
     color: white;
     margin-bottom: 20px;
+    margin-left: -2%;
 }
 .sub-form-title {
-    font-family: Roboto;
     font-size: 1.5rem;
     font-weight: 400;
     color: white;
@@ -94,13 +91,11 @@ li {
 .sub-form-input {
     width: 60%;
     padding: 10px;
-    font-family: Roboto;
     font-size: 1.5rem;
 }
 .sub-form-btn {
     width: 30%;
     background-color: #2D2B2F;
-    font-family: Roboto;
     font-size: 1.5rem;
     text-transform: uppercase;
     color: white;
@@ -116,7 +111,6 @@ li {
 .sub-links-title {
     margin-top: 30px;
     margin-bottom: 25px;
-    font-family: Roboto;
     font-size: 1.875rem;
     font-weight: 500;
     color: white;
@@ -181,13 +175,11 @@ li {
     margin: auto;   
 }
 .footer-logo-text {
-   font-family: Roboto-Bold;
    font-weight: 900;
    font-size: 2.25rem;
    color: white;
 }
 .footer-date-text {
-    font-family: Roboto;
     font-weight: 300;
     font-size: 1.5rem;
     color: #E5E5E5;
