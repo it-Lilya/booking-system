@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/booking-system/static/css/main.fb5e3c50.css",
-    "main.js": "/booking-system/static/js/main.f669c531.js",
+    "main.css": "/booking-system/static/css/main.90e878d6.css",
+    "main.js": "/booking-system/static/js/main.daedac69.js",
     "static/js/787.9d451dd9.chunk.js": "/booking-system/static/js/787.9d451dd9.chunk.js",
     "static/media/work.png": "/booking-system/static/media/work.2f68311b0436e88b859b.png",
     "static/media/image.png": "/booking-system/static/media/image.23031b7e138a52623dff.png",
     "static/media/Backgroun-selection.png": "/booking-system/static/media/Backgroun-selection.9879decf332e941df8dc.png",
-    "static/media/Roboto-Regular.ttf": "/booking-system/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
     "static/media/user-second.png": "/booking-system/static/media/user-second.b4e3ed2619c27f0f4fd2.png",
     "static/media/user-first.png": "/booking-system/static/media/user-first.09e65125397ea7aef925.png",
     "static/media/loading.gif": "/booking-system/static/media/loading.4e2e699c349a7e5f3147.gif",
-    "static/media/scheme.png": "/booking-system/static/media/scheme.4c1bf9dbe698884bb860.png",
+    "static/media/coach-fourth.png": "/booking-system/static/media/coach-fourth.0412828810b4cb27f8ab.png",
+    "static/media/coach-third.png": "/booking-system/static/media/coach-third.09378d6fd2fdba506efb.png",
+    "static/media/coach-second.png": "/booking-system/static/media/coach-second.977e5496db3a6ea28689.png",
+    "static/media/coach-first.png": "/booking-system/static/media/coach-first.5798c72692a4ce671cfa.png",
     "index.html": "/booking-system/index.html",
-    "main.fb5e3c50.css.map": "/booking-system/static/css/main.fb5e3c50.css.map",
-    "main.f669c531.js.map": "/booking-system/static/js/main.f669c531.js.map",
+    "main.90e878d6.css.map": "/booking-system/static/css/main.90e878d6.css.map",
+    "main.daedac69.js.map": "/booking-system/static/js/main.daedac69.js.map",
     "787.9d451dd9.chunk.js.map": "/booking-system/static/js/787.9d451dd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb5e3c50.css",
-    "static/js/main.f669c531.js"
+    "static/css/main.90e878d6.css",
+    "static/js/main.daedac69.js"
   ]
 }
