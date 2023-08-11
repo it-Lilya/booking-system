@@ -10,9 +10,7 @@ export const Cities = () => {
     }
     const lists = document.querySelectorAll('.city-list');
     if (e.target.value !== '') {
-      fetch(
-        `https://students.netoservices.ru/fe-diplom//routes/cities?name=${e.target.value}`
-      )
+      fetch(`https://students.netoservices.ru/fe-diplom//routes/cities?name=${e.target.value}`)
         .then((response) => response.json(response))
         .then((data) => {
           if (data.length === 0) {
@@ -22,16 +20,12 @@ export const Cities = () => {
           lists.forEach((list) => {
             list.classList.remove('open-citi-list');
           });
-          e.target.parentElement
-            .querySelector('ul')
-            .classList.add('open-citi-list');
+          e.target.parentElement.querySelector('ul').classList.add('open-citi-list');
         });
     }
 
     if (e.target.value === '') {
-      e.target.parentElement
-        .querySelector('ul')
-        .classList.remove('open-citi-list');
+      e.target.parentElement.querySelector('ul').classList.remove('open-citi-list');
     }
   }
   function selectionCity(e) {

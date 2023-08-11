@@ -12,9 +12,7 @@ export function SelectSeats() {
     if (localStorage.getItem('back-ticket') !== null) {
       setBack(
         <>
-          <SelectMain
-            element={JSON.parse(localStorage.getItem('back-ticket'))}
-          />
+          <SelectMain element={JSON.parse(localStorage.getItem('back-ticket'))} />
           <NumberOfTickets />
           <TypeWagonsContainer />
         </>
@@ -28,8 +26,7 @@ export function SelectSeats() {
       container.firstChild.classList.add('back-btn-ticket');
     }
     if (document.querySelectorAll('.general-type-wagons')[1] !== undefined) {
-      document.querySelectorAll('.general-type-wagons')[1].style.height =
-        '300px';
+      document.querySelectorAll('.general-type-wagons')[1].style.height = '300px';
     }
   }, [back]);
   return (
@@ -42,7 +39,7 @@ export function SelectSeats() {
       </div>
       <div className='select-bottom'></div>
       {back}
-      <button className='button-next-btns' type='button'>
+      <button id='button-next-btns' className='button-next-btns' type='button'>
         Далее
       </button>
     </section>

@@ -21,6 +21,7 @@ export function CardTicketType() {
             cardsWagon[0].classList.add('number-wagon-active');
         }
     }, [arr]);
+    useEffect(() => localStorage.setItem('active', JSON.stringify(active)));
     function numberWagon(e) {
         if (String(parseInt(e.match(/\d+/))).length === 1) {
             return `${0}${parseInt(e.match(/\d+/))}`

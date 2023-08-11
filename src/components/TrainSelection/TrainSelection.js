@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TrainSelection.css';
 import { HeaderMenu } from '../Header/Cap/HeaderMenu/HeaderMenu';
 import { HeaderForm } from '../Header/Cap/HeaderBottom/Bottom/HeaderForm/HeaderForm';
@@ -7,8 +8,9 @@ import { LeftSection } from './LeftSection/LeftSection';
 import { Footer } from '../Footer/Footer';
 import { RightSection } from './RightSection/RightSection';
 import { SelectSeats } from './SelectSeats/SelectSeats';
-// import { Passengers } from './LeftSection/Passengers/Passengers';
+import { Passengers } from './Passengers/Passengers';
 import animation from '../../images/loading.gif';
+import { PassangerForm } from './PassangerForm/PassangerForm';
 
 function workWithForm() {
   const trainFormContainer = document.querySelector('.bottom-form-container');
@@ -44,7 +46,6 @@ function workWithForm() {
   }
 }
 export function TrainSelection() {
-  // const resPassengers = <Passengers />;
   const [line, setLine] = useState(2);
   const animLoading = (
     <main className='animation'>
@@ -83,17 +84,13 @@ export function TrainSelection() {
     setTimeout(() => {
       if (line <= 99) {
         setLine(Number(line) + 2);
-        document.querySelector(
-          '.search-progress-line'
-        ).style.width = `${line}%`;
+        document.querySelector('.search-progress-line').style.width = `${line}%`;
       }
       if (line === 100) {
         clearTimeout();
         setLine(100);
         setMain(firstMain);
-        document
-          .querySelector('.progress-order')
-          .classList.remove('progress-hidden');
+        document.querySelector('.progress-order').classList.remove('progress-hidden');
         openTicket();
       }
     }, 10);
@@ -120,13 +117,9 @@ export function TrainSelection() {
       if (dateInputs[1].value !== '') {
         localStorage.setItem('second-date-seconds', dateInputs[1].value);
       }
-      fetch(
-        `https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[0].id}&to_city_id=${inputs[1].id}`
-      )
-        .then((response) => response.json())
-        .then((data) =>
-          localStorage.setItem('direction-there', JSON.stringify(data.items))
-        );
+      fetch(`https://students.netoservices.ru/fe-diplom/routes?from_city_id=${inputs[0].id}&to_city_id=${inputs[1].id}`)
+          .then((response) => response.json())
+          .then((data) => localStorage.setItem('direction-there', JSON.stringify(data.items)));
     });
   }, []);
   useEffect(() => {
@@ -141,12 +134,25 @@ export function TrainSelection() {
             e.preventDefault();
             setMain(animLoading);
             setLine(2);
-            document
-              .querySelector('.progress-order')
-              .classList.add('progress-hidden');
+            document.querySelector('.progress-order').classList.add('progress-hidden');
           });
         }
       });
+      const btnFurther = document.querySelector('.button-next-btns');
+      if (btnFurther) {
+        btnFurther.addEventListener('click', (e) => {
+          e.preventDefault();
+          const paragraphs = document.querySelectorAll('.paragraph');
+          paragraphs[1].classList.add('paragraph-active');
+          paragraphs[1].querySelector('.triandle-end').classList.add('triangle-active');
+          paragraphs[1].previousElementSibling.querySelector('.start-triangle').classList.add('start-triangle-active');
+          setMain(     
+          <main className='main-contain'>
+            <Passengers />
+            <PassangerForm />
+          </main>)
+        })
+      }
     }, 0);
   }, [main]);
   useEffect(() => {
@@ -154,20 +160,6 @@ export function TrainSelection() {
       openTicket();
     });
   }, []);
-  // useEffect(() => {
-  //   // const btn = document.querySelector('.button-next-btns');
-  //   // if (btn) {
-  //   //   btn.addEventListener('click', (e) => {
-  //   //     e.preventDefault();
-  //   //     // console.log('click');
-  //   //     // const paragraphs = document.querySelectorAll('.paragraph');
-  //   //     // paragraphs[1].classList.add('paragraph-active');
-  //   //     // paragraphs[1].querySelector('.triandle-end').classList.add('triangle-active');
-  //   //     // paragraphs[1].previousElementSibling.querySelector('.start-triangle').classList.add('start-triangle-active');
-  //   //     // setRight(resPassengers);
-  //   //   });
-  //   // }
-  // });
   return (
     <>
       <header className='train-header'>

@@ -25,7 +25,7 @@
 }
 
 .direction-title {
-    margin-left: 10px;
+    margin-left: -10px;
     font-weight: 700;
     font-size: 1.65rem;
     color: white;
@@ -48,7 +48,7 @@
 .open-direction-data {
     width: 20px;
     height: 20px;
-    background-image: url('/src/images/show-up.png');
+    /* background-image: url('/src/images/show-up.png'); */
     background-size: cover;
     background-color: transparent;
     left: 20%;

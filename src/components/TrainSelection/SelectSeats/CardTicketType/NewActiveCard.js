@@ -82,9 +82,16 @@ export function NewActiveCard({ card }) {
     if (card !== undefined) {
         const topPlaces = Math.round(card.coach.available_seats / 3);
         const lowerPlaces = Math.round(card.coach.available_seats - card.coach.available_seats / 3);
-        const bottomPrice = `${String(card.coach.bottom_price)[0]}${' '}${String(card.coach.bottom_price).slice(1, 4)}`;
-        const topPrice = `${String(card.coach.top_price)[0]}${' '}${String(card.coach.top_price).slice(1, 4)}`;
+        function price(e) {
+          if (String(e).length > 3) {
+            return `${String(e)[0]}${' '}${String(e).slice(1, 4)}`
+          } 
+          if (String(e).length <= 3) {
+            return e
+          }
+        }
         setTimeout(() => options(), 0);
+
     return (
         <div className='tickets-wagon-column'>
             <div className='wagon-number-information'>
@@ -101,11 +108,11 @@ export function NewActiveCard({ card }) {
             <div className='wagon-information-left'>
               <div className='wagon-information-flex'>
                 <p>Верхние <span className='position-seats'>{topPlaces}</span></p>
-                <p className='coach-price'>{bottomPrice} <span className='vector-ruble'>₽</span></p>
+                <p className='coach-price'>{price(card.coach.bottom_price)} <span className='vector-ruble'>₽</span></p>
               </div>
               <div className='wagon-information-flex'>
                 <p>Нижние <span className='position-seats'>{lowerPlaces}</span></p>
-                <p className='coach-price'>{topPrice} <span className='vector-ruble'>₽</span></p>
+                <p className='coach-price'>{price(card.coach.top_price)} <span className='vector-ruble'>₽</span></p>
               </div>
             </div>
             <div className='wagon-information-right'>

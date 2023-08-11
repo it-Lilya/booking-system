@@ -1,0 +1,71 @@
+.passengers-element-container {
+    margin-top: 50px;
+}
+.passengers-text {
+    background-color: #3e3c41;
+    padding: 30px;
+}
+.travel-title-passengers {
+    font-weight: 500;
+    font-size: 1.85rem;
+    color: #E5E5E5;
+    white-space: nowrap;
+    padding: 0px; 
+    text-transform: uppercase;
+}
+.passengers-information {
+    background-color: #3e3c41;
+    margin-top: 2px;
+}
+
+
+.passengers-date {
+    color: #FFF;
+    font-size: 1.125rem;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding-bottom: 10px;
+    width: 100%;
+}
+.column-passengers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    font-style: 1.125rem;
+    color: #E5E5E5;
+    width: 170%;
+}
+.passengers-price {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+}
+.total-container {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.total-passengers {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.875rem;
+    text-transform: uppercase;
+}
+.total-price {
+    font-size: 3rem;
+    color: #FFA800;
+    font-weight: 700;
+    margin-top: 20px;
+    padding-right: 5%;
+    white-space: nowrap;
+}

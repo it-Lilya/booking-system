@@ -15,8 +15,7 @@ export const Footer = () => {
       alert("Email указана некорректно.\n Пример: mail@mail.com");
       return;
     }
-    fetch(
-      `https://netology-trainbooking.netoservices.ru/subscribe?email=${input}`,
+    fetch(`https://netology-trainbooking.netoservices.ru/subscribe?email=${input}`,
       {
         method: "POST",
         header: {

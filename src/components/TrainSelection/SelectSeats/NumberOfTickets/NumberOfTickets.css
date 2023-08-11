@@ -14,32 +14,25 @@
     display: flex;
     align-items: stretch;
 }
-.tickets-number {
+.tickets-first-number, .tickets-second-number, .tickets-third-number {
     padding: 15px 20px 15px;
+    width: 30%;
 }
 .tickets-number:hover {
-   outline: 1px solid #ffa800;
+    /* padding: 14px 19px 14px; */
+    outline: 1px solid #ffa800;
 }
 .tickets-number-active {
     background: #F7F6F6;
  }
-.tickets-number input {
-    width: 90%;
-    padding: 12px 10px; 
-    border-radius: 5px;
-    border: 1px solid #928F94; 
-    font-size: 1.125rem;
-    margin-bottom: 10px;
-}
-
 .tickets-first-number {
-    width: 33.33%;
+    width: 33.30%;
 }
 .tickets-second-number {
-    width: 33.33%;
+    width: 33.30%;
 }
 .tickets-third-number {
-    width: 33.33%;
+    width: 33.30%;
 }
 .tickets-number-active p { 
     color: black;
@@ -47,13 +40,42 @@
 .tickets-number p { 
     color: #928F94;
 }
-/* .tickets-type-wagons {
-    background: white;
-    border: 1px solid red;
+.container-border {
+    width: 90%;
+    padding: 10px 10px; 
+    border-radius: 5px;
+    border: 1px solid #928F94; 
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
-.tickets-type-wagons h4 {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    font-size: 1.5rem;
-    font-weight: 700;
-} */
+.container-border input {
+    width: 80px;
+    height: 40px;
+    border: none;
+    font-size: 1.125rem;
+}
+.container-border input:focus {
+    outline: none;
+}
+.container-border p {
+    white-space: nowrap;
+    margin-right: 10px;
+    font-size: 1.125rem;
+    color: black;
+}
+/* .adults {
+    background-color: 1px solid red;
+    /* padding: 5px 5px;  */
+    /* margin-right: 10px; */
+    /* font-style: 18px; */
+    /* position: absolute;
+    content: ''; */
+    /* padding-right: 100px; 
+} 
+.adults:focus {
+    outline: none;
+}*/

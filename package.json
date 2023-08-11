@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "gh-pages": "^5.0.0",
+    "handy-svg": "^1.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-hash-link": "^2.4.3",
@@ -21,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-deploy": "react-scripts build && yarn deploy" 
+    "build-deploy": "react-scripts build && yarn deploy"
   },
   "eslintConfig": {
     "extends": [

@@ -166,7 +166,7 @@
     white-space: nowrap;
 }
 .new-card-arrow-right {
-    margin-top: 45px;
+    margin-top: 35px;
     position: absolute;
     content: '';
     width: 40px;
@@ -296,7 +296,7 @@
 }
 
 .new-card-arrow-left {
-    margin-top: 45px;
+    margin-top: 35px;
     position: absolute;
     content: '';
     width: 40px;

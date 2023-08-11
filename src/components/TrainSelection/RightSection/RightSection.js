@@ -155,13 +155,9 @@ export function RightSection() {
   }, [arr]);
   function sortingTimes(fromMin, fromMax) {
     const minLine =
-      fromMin.parentElement.parentElement.querySelector(
-        '.line-input-first'
-      ).firstChild;
+      fromMin.parentElement.parentElement.querySelector('.line-input-first').firstChild;
     const maxLine =
-      fromMax.parentElement.parentElement.querySelector(
-        '.line-input-first'
-      ).lastChild;
+      fromMax.parentElement.parentElement.querySelector('.line-input-first').lastChild;
     const resultLineMin = minLine.textContent.split(':');
     const resultLineMax = maxLine.textContent.split(':');
     const array = [];
@@ -226,17 +222,21 @@ export function RightSection() {
           setTimeout(() => {
             const fromMin = document.querySelector('.range-min-from');
             const fromMax = document.querySelector('.range-max-from');
-            fromMin.addEventListener('mouseup', () => {
+            if (fromMin !== null) {
+              fromMin.addEventListener('mouseup', () => {
               sortingTimes(fromMin, fromMax);
-            });
-            fromMax.addEventListener('mouseup', () => {
-              sortingTimes(fromMin, fromMax);
-            });
+              });
+            }
+            if (fromMax !== null) {
+              fromMax.addEventListener('mouseup', () => {
+                sortingTimes(fromMin, fromMax);
+              });
+            }
           }, 0);
         }
       });
     });
-  }, [arr]);
+  });
   return (
     <section className='right-section'>
       <div className='sort-result-container'>
