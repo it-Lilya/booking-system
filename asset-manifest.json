@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/booking-system/static/css/main.863dc965.css",
-    "main.js": "/booking-system/static/js/main.6b606f7a.js",
+    "main.css": "/booking-system/static/css/main.673c859d.css",
+    "main.js": "/booking-system/static/js/main.41ce8f74.js",
     "static/js/787.9d451dd9.chunk.js": "/booking-system/static/js/787.9d451dd9.chunk.js",
     "static/media/work.png": "/booking-system/static/media/work.2f68311b0436e88b859b.png",
     "static/media/image.png": "/booking-system/static/media/image.23031b7e138a52623dff.png",
@@ -9,17 +9,17 @@
     "static/media/user-second.png": "/booking-system/static/media/user-second.b4e3ed2619c27f0f4fd2.png",
     "static/media/user-first.png": "/booking-system/static/media/user-first.09e65125397ea7aef925.png",
     "static/media/loading.gif": "/booking-system/static/media/loading.4e2e699c349a7e5f3147.gif",
-    "static/media/coach-fourth.png": "/booking-system/static/media/coach-fourth.0412828810b4cb27f8ab.png",
-    "static/media/coach-third.png": "/booking-system/static/media/coach-third.09378d6fd2fdba506efb.png",
-    "static/media/coach-second.png": "/booking-system/static/media/coach-second.977e5496db3a6ea28689.png",
+    "static/media/image_fourth_class_wagon.svg": "/booking-system/static/media/image_fourth_class_wagon.4d031eb1ec2daded05b3.svg",
+    "static/media/image_third_class_wagon.svg": "/booking-system/static/media/image_third_class_wagon.c1872b911c2566a3a469.svg",
+    "static/media/image_second_class_wagon.svg": "/booking-system/static/media/image_second_class_wagon.0c92d0bc2abd8f0f39cf.svg",
     "static/media/coach-first.png": "/booking-system/static/media/coach-first.5798c72692a4ce671cfa.png",
     "index.html": "/booking-system/index.html",
-    "main.863dc965.css.map": "/booking-system/static/css/main.863dc965.css.map",
-    "main.6b606f7a.js.map": "/booking-system/static/js/main.6b606f7a.js.map",
+    "main.673c859d.css.map": "/booking-system/static/css/main.673c859d.css.map",
+    "main.41ce8f74.js.map": "/booking-system/static/js/main.41ce8f74.js.map",
     "787.9d451dd9.chunk.js.map": "/booking-system/static/js/787.9d451dd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.863dc965.css",
-    "static/js/main.6b606f7a.js"
+    "static/css/main.673c859d.css",
+    "static/js/main.41ce8f74.js"
   ]
 }
