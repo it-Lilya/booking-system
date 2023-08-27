@@ -119,27 +119,26 @@
     width: 70%;
 }
 .new-card-info {
-    height: 50px;
+    height: 90px;
     display: flex;
     justify-content: space-between;
     position: absolute;
     content: '';
-    width: 58%;
-    margin-left: 22%;
+    width: 60%;
+    left: 3%;
 }
 .new-card-first {
-    width: 45%;
+    width: 38%;
 }
 .new-card-second {
-    width: 15%;
+    width: 14%;
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-left: -10%;
 }
 .new-card-third {
-    width: 40%;
-    margin-right: -5%;
+    padding-left: 7%;
+    width: 48%;
 }
 .new-card-date {
     font-size: 1.8rem;
@@ -160,9 +159,9 @@
 .available-time { 
     font-size: 1.2rem;
     color: #c4c4c4;
-    margin-top: 15px;
+    margin-top: 7px;
     width: 48px;
-    margin-left: -15%;
+    margin-left: -25%;
     white-space: nowrap;
 }
 .new-card-arrow-right {

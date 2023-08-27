@@ -4,13 +4,13 @@
 .train-image {
     position: relative;
     width: 100%;
-    height: 574px;
+    height: 585px;
 }
 .train-image::before {
     content: '';
     position: absolute;
     width: 100%;
-    height: 574px;
+    height: 585px;
     background: url('/src/images/Backgroun-selection.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -30,13 +30,6 @@
     display: flex;
 }
 
-.train-form {
-    /* width: 97%; */
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* border: 1px solid yellow; */
-    /* flex-direction: column; */
-}
 .blocks-train-title {
     width: 40%;
     position: absolute;
@@ -47,13 +40,6 @@
 .blocks-train-title:nth-child(n + 2) {
     margin-left: 53%;
 }
-/* .blocks-train {
-    /* height: 10px;
-    width: 48%; 
-    border: 1px solid red;
-    width: 200px;
-    
-} */
 .date-inputs-train {
     margin-top: 5px;
     border: 1px solid orange;
@@ -113,3 +99,13 @@
     flex-direction: column;
     border: 1px solid green;
 }
+/* .sdklk {
+    position: relative;
+    width: 921px;
+    height: 145px;
+    margin-top: 69px;
+    margin-left: auto;
+    border: 1px solid red;
+    background-image: url('../../images/scheme-first.svg');
+    background-color: orange;
+} */

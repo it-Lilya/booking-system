@@ -6,6 +6,7 @@
     border: 1px solid #C4C4C4;
     background: #FFF;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 50px;
 }
 .title-pas {
     background: #F9F9F9;
@@ -18,6 +19,16 @@
     padding-top: 17px;
     align-items: center;
 }
+.vector-minus {
+    background-image: url('../../../images/vec-minus.png');
+    width: 32px;
+    height: 32px;
+}
+.vector-pluse {
+    background-image: url('../../../images/vec-pluse.png');
+    width: 32px;
+    height: 32px;
+}
 .form-pas-title {
     padding-top: 20px;
     color: #292929;
@@ -27,10 +38,15 @@
 .cross-list {
     position: absolute;
     content: '';
-    right: 2%;
+    right: 3%;
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../../../images/Vector\ \(10\).png');
 }
 .general-form-pas {
-    padding: 40px 3%;
+    padding: 40px 3% 0px;
 }
 .select-pass {
     width: 25%;
@@ -163,6 +179,9 @@
     margin-left: -3.2%;
     margin-top: 30px;
 } 
+.basic-document-type-pass {
+    width: 90%;
+}
 .basic-password {
     margin-top: 40px;
     display: flex;
@@ -175,7 +194,7 @@
 }
 .select-pass-password {
     margin-top: 20px;
-    width: 70%;
+    width: 80%;
     font-size: 1.5rem;
     color: #292929;
     font-weight: 400;
@@ -230,7 +249,7 @@
     color: #C4C4C4;
 }
 .next-passenger {
-    background-color: white;
+    background-color: transparent;
     border-radius: 5px;
     border: 1px solid #292929;
     padding: 8px 10px;
@@ -238,4 +257,107 @@
     font-size: 1.5rem;
     margin-top: 30px;
     margin-left: 70%;
+    margin-bottom: 40px;
+    /* width: 90%; */
+    white-space: nowrap;
+}
+.title-pas-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 37px 40px;
+}
+.form-pas-title-bottom {
+    color: #292929;
+    font-size: 1.875rem;
+}
+.form-pas-icon {
+    width: 17px;
+    height: 17px;
+    background-image: url('./../../../images/Group.png');
+    background-size: contain;
+}
+.window-error {
+    background: rgba(255, 61, 0, 0.38);
+    padding: 0;
+    width: 100.5%;
+    margin-left: -3.2%;
+    padding: 30px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.substract-error {
+    width: 32px;
+    height: 32px;
+    background-image: url('../../../images/Subtract-error.png');
+}
+.err-container {
+    margin-left: 30px;
+    font-size: 1.125rem;
+    color: #292929;
+    font-weight: 400;
+}
+.example {
+    font-weight: 700;
+}
+.err-hidden {
+    display: none;
+}
+.further-btn {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FFF;
+    text-align: center;
+    position: absolute;
+    content: '';
+    margin-left: 56.55%;
+    padding: 15px 70px;
+    background: #FFA800;
+    border: none;
+    border-radius: 5px;
+}
+.further-btn:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.further-btn:focus {
+    border: 1px solid #FFA800;
+    background: transparent;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #FFA800;
+}
+.not-active {
+    background: #928F94;
+    color: #fff;
+}
+.window-ready {
+    background-color: #B2F6A1;
+    padding: 0;
+    height: 50px;
+    width: 100.5%;
+    margin-left: -3.2%;
+    padding: 30px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.substract-ready {
+    width: 32px;
+    height: 32px;
+    background-image: url('../../../images/Subtract-ok.png');
+}
+.next-passenger-readonly {
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid #292929;
+    padding: 8px 10px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    white-space: nowrap;
+}
+.ready-hidden {
+    display: none;
 }

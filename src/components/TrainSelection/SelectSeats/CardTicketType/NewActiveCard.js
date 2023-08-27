@@ -1,12 +1,9 @@
 import React from 'react';
+import { NewWagonFirst } from './NewWagonFirst';
+import { getSeatsArr } from './GetSeatsArr';
 
 export function NewActiveCard({ card }) {
-    function numberWagon(e) {
-        if (String(parseInt(e.match(/\d+/))).length === 1) {
-            return `${0}${parseInt(e.match(/\d+/))}`
-        }
-        return parseInt(e.match(/\d+/));
-    }
+  const seatsBtnsArr = getSeatsArr(card.coach.class_type);
       function tool(e) {
         document.querySelectorAll('.wagon-information-icons-container p').forEach((element) => {
           element.classList.remove('tooltip');
@@ -64,7 +61,12 @@ export function NewActiveCard({ card }) {
         }
         if (card.coach.class_type === 'fourth') {
             document.querySelector('.wagon-scheme-main').classList.add('fourth-class-type');
-            document.querySelector('.tickets-type-sedentary').classList.add('type-sedentary-focus')
+            document.querySelector('.tickets-type-sedentary').classList.add('type-sedentary-focus');
+            document.querySelectorAll('.position-seats-main').forEach((el) => {
+              el.style.display = 'none';
+              document.querySelector('.coach-price-first').classList.add('open-coach-first-price')
+
+            })
         }
         if (card.coach.class_type !== 'first') {
             document.querySelector('.tickets-type-lux').classList.remove('type-lux-focus');
@@ -76,10 +78,15 @@ export function NewActiveCard({ card }) {
             document.querySelector('.tickets-type-reserved').classList.remove('tickets-reserved-focus');
         }
         if (card.coach.class_type !== 'fourth') {
-            document.querySelector('.tickets-type-sedentary').classList.remove('type-sedentary-focus')
+            document.querySelector('.tickets-type-sedentary').classList.remove('type-sedentary-focus');
+            document.querySelectorAll('.position-seats-main').forEach((el) => {
+              el.style.display = 'block';
+              document.querySelector('.coach-price-first').classList.remove('open-coach-first-price')
+
+            })
         }
       }
-    if (card !== undefined) {
+
         const topPlaces = Math.round(card.coach.available_seats / 3);
         const lowerPlaces = Math.round(card.coach.available_seats - card.coach.available_seats / 3);
         function price(e) {
@@ -90,8 +97,14 @@ export function NewActiveCard({ card }) {
             return e
           }
         }
-        setTimeout(() => options(), 0);
-
+       
+        function numberWagon(e) {
+            if (String(parseInt(e.match(/\d+/))).length === 1) {
+                return `${0}${parseInt(e.match(/\d+/))}`
+            }
+            return parseInt(e.match(/\d+/));
+        }
+        setTimeout(() => options());
     return (
         <div className='tickets-wagon-column'>
             <div className='wagon-number-information'>
@@ -107,12 +120,12 @@ export function NewActiveCard({ card }) {
           <div className='wagon-information-main'>
             <div className='wagon-information-left'>
               <div className='wagon-information-flex'>
-                <p>Верхние <span className='position-seats'>{topPlaces}</span></p>
-                <p className='coach-price'>{price(card.coach.bottom_price)} <span className='vector-ruble'>₽</span></p>
+                <div className='position-seats-main'>Верхние <span className='position-seats'>{topPlaces}</span></div>
+                <div className='coach-price position-seats-main'>{price(card.coach.bottom_price)} <span className='vector-ruble'>₽</span></div>
               </div>
               <div className='wagon-information-flex'>
-                <p>Нижние <span className='position-seats'>{lowerPlaces}</span></p>
-                <p className='coach-price'>{price(card.coach.top_price)} <span className='vector-ruble'>₽</span></p>
+                <div className='position-seats-main'>Нижние <span className='position-seats'>{lowerPlaces}</span></div>
+                <div className='coach-price coach-price-first'>{price(card.coach.top_price)} <span className='vector-ruble'>₽</span></div>
               </div>
             </div>
             <div className='wagon-information-right'>
@@ -136,13 +149,17 @@ export function NewActiveCard({ card }) {
               </div>
           </div>
         </div>
-        <div className='wagon-scheme-container'>
-            <p className='window-wagon-scheme'>11 человек выбирают места в этом поезде</p>
-            <span className='absolute-number'>{numberWagon(card.coach.name)}</span>
-            <div className='wagon-scheme-main'></div>
-        </div>
+          <div className='wagon-scheme-container'>
+              <p className='window-wagon-scheme'>11 человек выбирают места в этом поезде</p>
+              <span className='absolute-number'>{numberWagon(card.coach.name)}</span>
+              <div>
+                <div className='seats-con-first seats-con-first-open'>
+                  <NewWagonFirst arr={seatsBtnsArr} checkedSeats={card.seats} classDate={card.coach.class_type} cardInfo={card}/>
+                </div>
+              </div>
+              <i className='wagon-scheme-main'></i>
+          </div>
             </div>
         </div>
     )
-    }
 }

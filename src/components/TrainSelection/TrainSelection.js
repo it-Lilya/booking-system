@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './TrainSelection.css';
 import { HeaderMenu } from '../Header/Cap/HeaderMenu/HeaderMenu';
 import { HeaderForm } from '../Header/Cap/HeaderBottom/Bottom/HeaderForm/HeaderForm';
@@ -16,7 +15,7 @@ function workWithForm() {
   const trainFormContainer = document.querySelector('.bottom-form-container');
   trainFormContainer.classList.add('train-form-container');
   trainFormContainer.style.width = '75%';
-  trainFormContainer.style.height = '310px';
+  trainFormContainer.style.height = '342px';
   const btn = trainFormContainer.querySelector('.search-button');
   btn.style.right = '3.7%';
   btn.style.top = '62%';
@@ -155,6 +154,7 @@ export function TrainSelection() {
       }
     }, 0);
   }, [main]);
+
   useEffect(() => {
     document.addEventListener('click', () => {
       openTicket();

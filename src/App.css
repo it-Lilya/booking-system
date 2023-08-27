@@ -3,6 +3,7 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-appearance: none;
 }
 html { 
   scroll-behavior: smooth;

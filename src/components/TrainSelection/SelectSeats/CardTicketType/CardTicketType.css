@@ -257,15 +257,8 @@
     background: #f3f3f3;
     width: 25%;
     margin-left: 70%;
-    padding: 15px 10px;
-}
-.wagon-scheme-main {
-    width: 67%;
-    position: absolute;
-    content: '';
-    left: 30%;
-    padding-top: 50px;
-    height: 200px;
+    padding: 0 10px;
+    margin-top: 50px;
 }
 .absolute-number {
     position: absolute;
@@ -273,7 +266,7 @@
     z-index: 1;
     left: 32.5%;
     width: 45px;
-    height: 25px;
+    height: 27px;
     background-color: rgb(53, 53, 53);
     color: white;
     align-items: center;
@@ -282,18 +275,193 @@
     padding-top: 5px;
 }
 .wagon-scheme-main {
+    width: 67%;
+    margin-top: 100px;
+    position: absolute;
+    content: '';
+    top: 82.3%;
+    left: 29.8%;
+    height: 200px;
     background-size: contain;
     background-repeat: no-repeat;
+    margin-top: -60px;
 }
 .first-class-type {
     background-image: url('/src/images/coach-first.png');
 }
 .second-class-type {
-    background-image: url('/src/images/coach-second.png');
+    background-image: url('/src/images/image_second_class_wagon.svg');
 }
 .third-class-type {
-    background-image: url('/src/images/coach-third.png');
+    background-image: url('/src/images/image_third_class_wagon.svg');
 }
 .fourth-class-type {
-    background-image: url('/src/images/coach-fourth.png');
+    background-image: url('/src/images/image_fourth_class_wagon.svg');
+}
+.seats-con-first, .seats-con-second, .seats-con-third .seats-con-fourth {
+    display: none;
+}
+.seats-con-first-open, .seats-con-second-open, .seats-con-third-open, .seats-con-fourth-open {
+    position: absolute;
+    content: '';
+    margin-top: 30px;
+    margin-left: -75px;
+    height: 120px;
+    width: 760px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.seats-con-column {
+    width: 12.3%;
+    display: flex;
+    justify-content: space-between;
+}
+.seats-con-columns {
+    width: 32%;
+    height: 56%;
+    /* background-color: rgb(237, 234, 234); */
+    border: none;
+}
+.seats-free {
+    background-color: rgb(239, 232, 232);
+}
+.seats-free:hover {
+    outline: 2px solid #FFA800;
+}
+.seats-con-columns-number {
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.seats-notfree {
+    background-color: rgb(166, 162, 162);
+    color: white
+}
+.btn-selected-seats {
+    background: #FFA800;
+}
+.seats-con-column-second {
+    height: 60px;
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.side-coupe {
+    width: 4%;
+    height: 110%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.side-coupe:nth-child(2n) {
+    margin-left: 4%;
+}
+.seats-con-colu {
+    width: 100%;
+}
+
+.third-col-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+
+}
+.seats-con-column-third {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+.side-reserved {
+    height: 99%;
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+}
+ .side-reserved {
+    display: flex;
+    justify-content: space-between;
+} 
+.side-reserved:nth-child(2n) {
+    align-items: flex-end;
+}
+.seats-con-colu-third {
+    margin-top: 2px;
+    width: 60%;
+    height: 55%;
+    border: none;
+    margin-right: 2px;
+}
+.seats-con-col-side {
+    width: 50%;
+    height: 100%;
+    border: none;
+}
+.col-side-seats-reserved {
+    height: 30px;
+    display: flex;
+   
+}
+.side-reserved-bottom {
+    width: 12%;
+    margin-right: 0.5%;
+    display: flex;
+    justify-content: space-between;
+}
+.seats-con-colu-bottom {
+    width: 50%;
+    height: 98%;
+    border: none;
+}
+.seats-con-colu-bottom:nth-child(1n) {
+    margin-right: 0.5%;
+}
+.seats-con-column-fourth {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.even-container, .odd-container {
+    padding-left: 10px;
+    width: 100%;
+    height: 50%;
+    margin: 5px auto;
+}
+.seats-col-even, .seats-col-odd {
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+}
+.side-sedentary-first {
+    justify-content: flex-end;
+    display: flex;
+    margin-right: 0;
+}
+.side-sedentary-first:first-child {
+    margin-left: 6.5%;
+}
+.side-sedentary-first:last-child {
+    margin-right: 6.5%;
+}
+.seats-con-colu-fourth {
+    width: 30px;
+    height: 24px;
+    
+}
+.result-price-seats {
+    position: absolute;
+    right: -10%;
+    top: 130%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFA800;
+}
+.open-coach-first-price {
+    margin-left: 77%;
+    margin-top: -30px;
 }

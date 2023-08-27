@@ -61,7 +61,7 @@
 }
 .first-seats-flex {
     width: 100%;
-    margin-left: -15%;
+    margin-left: -18%;
 }
 .select-seats-border {
     position: relative;
@@ -123,21 +123,23 @@
     display: flex;
 }
 .new-card-select {
-    width: 48%;
+    width: 50%;
     height: 82%;
     display: flex;
     margin-top: 2.5%;
     padding-left: 2%;
+    padding-right: 2%;
     justify-content: space-between;
     border-right: 2px solid white;
 }
 .seat-third-container {
-    width: 20%;
-    height: 100%;
+    width: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 20px;
+}
+.select-seats-borders {
+    margin-left: 15%;
 }
 .seats-third-vector-time {
     display: flex;

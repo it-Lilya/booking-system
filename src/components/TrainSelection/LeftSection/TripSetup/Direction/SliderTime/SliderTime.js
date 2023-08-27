@@ -89,7 +89,7 @@ export const SliderTime = () => {
   return (
     <>
       <div className='direction-times'>
-        <h4 className='direction-title-time first-time'>Время отбытия</h4>
+        <p className='direction-title-time first-time'>Время отбытия</p>
         <div className='slider-first'>
           <div className='progress-first'></div>
         </div>
@@ -120,7 +120,7 @@ export const SliderTime = () => {
         </div>
       </div>
       <div className='direction-times'>
-        <h4 className='direction-title-time second-time'>Время прибытия</h4>
+        <p className='direction-title-time second-time'>Время прибытия</p>
         <div className='slider-second'>
           <div className='progress-second'></div>
         </div>

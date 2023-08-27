@@ -82,7 +82,7 @@ export const Cities = () => {
         <input
           className='form-input second input'
           type='text'
-          placeholder='Откуда'
+          placeholder='Куда'
           name='city-second'
           onChange={citiesQuery}
           autoComplete='off'

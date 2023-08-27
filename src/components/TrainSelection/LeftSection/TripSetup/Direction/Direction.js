@@ -31,7 +31,7 @@ export const Direction = () => {
       <div className='direction-container'>
         <div className='direction-header'>
           <span className='img-direction-first'></span>
-          <h4 className='direction-title'>Туда</h4>
+          <p className='direction-title'>Туда</p>
           <button className='btns-directions icon-direction direction-first' onClick={open}></button>
         </div>
         <div className='direction-data-container' id='1'>
@@ -41,7 +41,7 @@ export const Direction = () => {
       <div className='direction-container'>
         <div className='direction-header'>
           <span className='img-direction-second'></span>
-          <h4 className='direction-title'>Обратно</h4>
+          <p className='direction-title'>Обратно</p>
           <button className='btns-directions icon-direction direction-second' onClick={open}></button>
         </div>
         <div className='direction-data-container' id='2'>

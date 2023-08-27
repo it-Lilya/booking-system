@@ -13,7 +13,7 @@ export function PassengersInfo({ elem, res }) {
         <div className='direction-container'>
             <div className='direction-header'>
             <span className='img-direction-first'></span>
-            <h4 className='direction-title'>Туда</h4>
+            <p className='direction-title'>Туда</p>
             <p className='passengers-date'>{dateTime(elem.departure.from.datetime)}</p>
             <button className='btns-directions icon-direction direction-first'></button>
             </div>

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import './ColumnInformation.css';
-import format from "date-fns/format";
+import format from 'date-fns/format';
 
 export function ColumnInformation({ element }) {
    function numberWagon(e) {

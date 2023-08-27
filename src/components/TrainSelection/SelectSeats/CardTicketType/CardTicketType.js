@@ -7,6 +7,7 @@ export function CardTicketType() {
     const ticket = JSON.parse(localStorage.getItem('chosen-ticket'));
     const [arr, setArr] = useState([]);
     const [active, setActive] = useState(arr[0]);
+    const [activeWagon, setActiveWagon] = useState();
     useEffect(() => {
         fetch(`https://students.netoservices.ru/fe-diplom/routes/${ticket.departure._id}/seats?`)
             .then((res) => res.json())
@@ -44,6 +45,12 @@ export function CardTicketType() {
             setActive(arr[2]);
         }
     }
+    useEffect(() => {
+        if (active !== undefined) {
+         setActiveWagon(<NewActiveCard card={active} />) 
+        }
+    }, [active])
+   
     return (
         <div className='tickets-type-wagons'>
             <TypeWagonsContainer />
@@ -56,7 +63,8 @@ export function CardTicketType() {
                 </div>
                 <p className='text-'>Нумерация вагонов начинается с головы поезда</p>
             </div>
-           <NewActiveCard card={active} />
+            {activeWagon}
+           {/* <NewActiveCard card={active} /> */}
         </div>
     )
 }

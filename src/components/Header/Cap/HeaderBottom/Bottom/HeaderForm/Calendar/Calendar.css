@@ -2,6 +2,7 @@
     border-radius: 7px;
     background-color: white;
     padding: 3px;
+    width: 100%;
 }
 .react-calendar__navigation {
     height: 20px;
