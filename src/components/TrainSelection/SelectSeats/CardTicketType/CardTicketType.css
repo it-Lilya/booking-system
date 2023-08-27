@@ -276,15 +276,12 @@
 }
 .wagon-scheme-main {
     width: 67%;
-    margin-top: 100px;
     position: absolute;
     content: '';
-    top: 82.3%;
     left: 29.8%;
     height: 200px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-top: -60px;
 }
 .first-class-type {
     background-image: url('/src/images/coach-first.png');

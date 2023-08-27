@@ -154,10 +154,8 @@ export function RightSection() {
     });
   }, [arr]);
   function sortingTimes(fromMin, fromMax) {
-    const minLine =
-      fromMin.parentElement.parentElement.querySelector('.line-input-first').firstChild;
-    const maxLine =
-      fromMax.parentElement.parentElement.querySelector('.line-input-first').lastChild;
+    const minLine = fromMin.parentElement.parentElement.querySelector('.line-input-first').firstChild;
+    const maxLine = fromMax.parentElement.parentElement.querySelector('.line-input-first').lastChild;
     const resultLineMin = minLine.textContent.split(':');
     const resultLineMax = maxLine.textContent.split(':');
     const array = [];
@@ -166,52 +164,26 @@ export function RightSection() {
       activeData.forEach((elem) => {
         const timesElementFrom = new Date(elem.departure.from.datetime * 1000);
         const hourElement = timesElementFrom.getHours();
-        if (
-          hourElement > Number(resultLineMin[0]) &&
-          hourElement < Number(resultLineMax[0])
-        ) {
+        if (hourElement > Number(resultLineMin[0]) && hourElement < Number(resultLineMax[0])) {
           array.push(elem);
-          setTimeout(() => {
-            setArr(array);
-          }, 0);
-        } else if (
-          hourElement === Number(resultLineMin[0]) &&
-          hourElement < Number(resultLineMax[0])
-        ) {
-          const minutesElementMin = new Date(
-            elem.departure.from.datetime * 1000
-          ).getMinutes();
+        }
+        if (hourElement === Number(resultLineMin[0]) && hourElement < Number(resultLineMax[0])) {
+          const minutesElementMin = new Date(elem.departure.from.datetime * 1000).getMinutes();
           if (minutesElementMin >= Number(resultLineMin[1])) {
             array.push(elem);
-            setTimeout(() => {
-              setArr(array);
-            }, 0);
           }
-        } else if (
-          hourElement > Number(resultLineMin[0]) &&
-          hourElement === Number(resultLineMax[0])
-        ) {
-          const minutesElementMin = new Date(
-            elem.departure.from.datetime * 1000
-          ).getMinutes();
+        }
+        if (hourElement > Number(resultLineMin[0]) && hourElement === Number(resultLineMax[0])) {
+          const minutesElementMin = new Date(elem.departure.from.datetime * 1000).getMinutes();
           if (minutesElementMin <= Number(resultLineMax[1])) {
             array.push(elem);
-            setTimeout(() => {
-              setArr(array);
-            }, 0);
           }
           if (minutesElementMin > Number(resultLineMax[1])) {
             array.length = 0;
-            setTimeout(() => {
-              setArr(array);
-            }, 0);
           }
-        } else {
-          setTimeout(() => {
-            setArr([]);
-          }, 0);
         }
       });
+      setArr(array)
     }
   }
   useEffect(() => {
@@ -224,12 +196,12 @@ export function RightSection() {
             const fromMax = document.querySelector('.range-max-from');
             if (fromMin !== null) {
               fromMin.addEventListener('mouseup', () => {
-              sortingTimes(fromMin, fromMax);
+                sortingTimes(fromMin, fromMax);
               });
             }
             if (fromMax !== null) {
               fromMax.addEventListener('mouseup', () => {
-                sortingTimes(fromMin, fromMax);
+                // sortingTimes(fromMin, fromMax);
               });
             }
           }, 0);

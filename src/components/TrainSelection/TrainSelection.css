@@ -34,8 +34,6 @@
     width: 40%;
     position: absolute;
     content: '';
-    /* : 110px; */
-    
 }
 .blocks-train-title:nth-child(n + 2) {
     margin-left: 53%;
