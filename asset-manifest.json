@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/booking-system/static/css/main.673c859d.css",
-    "main.js": "/booking-system/static/js/main.41ce8f74.js",
+    "main.css": "/booking-system/static/css/main.8a74492b.css",
+    "main.js": "/booking-system/static/js/main.c1dcf889.js",
     "static/js/787.9d451dd9.chunk.js": "/booking-system/static/js/787.9d451dd9.chunk.js",
     "static/media/work.png": "/booking-system/static/media/work.2f68311b0436e88b859b.png",
     "static/media/image.png": "/booking-system/static/media/image.23031b7e138a52623dff.png",
@@ -14,12 +14,12 @@
     "static/media/image_second_class_wagon.svg": "/booking-system/static/media/image_second_class_wagon.0c92d0bc2abd8f0f39cf.svg",
     "static/media/coach-first.png": "/booking-system/static/media/coach-first.5798c72692a4ce671cfa.png",
     "index.html": "/booking-system/index.html",
-    "main.673c859d.css.map": "/booking-system/static/css/main.673c859d.css.map",
-    "main.41ce8f74.js.map": "/booking-system/static/js/main.41ce8f74.js.map",
+    "main.8a74492b.css.map": "/booking-system/static/css/main.8a74492b.css.map",
+    "main.c1dcf889.js.map": "/booking-system/static/js/main.c1dcf889.js.map",
     "787.9d451dd9.chunk.js.map": "/booking-system/static/js/787.9d451dd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.673c859d.css",
-    "static/js/main.41ce8f74.js"
+    "static/css/main.8a74492b.css",
+    "static/js/main.c1dcf889.js"
   ]
 }
